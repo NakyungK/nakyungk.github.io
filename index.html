@@ -65,9 +65,12 @@
     .profile-tag{font-size:0.65rem;font-weight:500;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.15);padding:0.18rem 0.5rem;border-radius:3px;}
 
     /* Right panel */
-    .hero-right{padding:2.5rem 3.5rem;display:flex;flex-direction:column;justify-content:flex-start;gap:0;}
+    .hero-right{padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;}
 
-    .hero-top{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+    .hero-intro-full{margin-bottom:2rem;}
+    .hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:2rem;}
+    .hero-edu-row{border-top:1px solid var(--line);padding-top:1.5rem;}
+    .hero-edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:0.8rem;}
 
     .hero-intro{}
     .hero-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem;}
@@ -93,7 +96,7 @@
     .stat-sub{font-size:0.67rem;color:var(--ink-muted);display:block;margin-top:0.1rem;}
 
     /* About + Education inline */
-    .hero-about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+    
     .about-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.5rem;}
     .about-label::before{content:'';width:14px;height:2px;background:var(--green);display:block;}
     .about-text{font-size:0.86rem;color:var(--ink-mid);line-height:1.8;}
@@ -171,14 +174,14 @@
     .proj-nav-btn{background:rgba(255,255,255,0.15);border:none;color:#fff;width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .proj-nav-btn:hover{background:rgba(255,255,255,0.3);}
 
-    .proj-cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:1.2rem;background:transparent;border:none;padding-top:0;}
+    .proj-cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:1.2rem;background:transparent;border:none;padding-top:0;justify-content:center;}
 
     /* Gallery view (모아보기) */
     .proj-gallery{display:block;}
     .proj-gallery.active{display:block;}
     .proj-expanded{display:none;} .proj-expanded.active{display:block;}
     .proj-expanded.active{display:block;}
-    .proj-expanded .proj-cards-grid-full{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+    .proj-expanded .proj-cards-grid-full{display:grid;grid-template-columns:repeat(3,minmax(0,360px));gap:1.2rem;justify-content:center;}
 
     .proj-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;cursor:pointer;border-radius:8px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.05);}
     .proj-card-img{width:100%;aspect-ratio:16/9;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;position:relative;}
@@ -306,8 +309,8 @@
       #hero{grid-template-columns:1fr;}
       .hero-left{position:static;height:auto;}
       .hero-right{padding:2rem;}
-      .hero-top{grid-template-columns:1fr;}
-      .hero-about{grid-template-columns:1fr;}
+      .hero-edu-grid{grid-template-columns:1fr;}
+      
       section{padding:3rem 1.5rem;}
       .proj-expanded .proj-cards-grid-full{grid-template-columns:repeat(2,1fr);}
       .pub-modal,.proj-modal{width:90%;}
@@ -360,60 +363,60 @@
   </div>
 
   <div class="hero-right">
-    <div class="hero-top">
-      <div class="hero-intro">
-        <div class="hero-eyebrow">UX Researcher & Service Planner</div>
-        <h1 class="hero-name">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
-        <p class="hero-desc">심리학(학사)과 산업공학(석사, HCI 전공)의 두 배경을 바탕으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.<br/><br/>특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
 
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1.2rem;">
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="stat-num">3</div>
-            <div class="stat-label">기업 산학 프로젝트<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
+    <!-- 상단: 소개글 풀 너비 -->
+    <div class="hero-intro-full">
+      <div class="hero-eyebrow">UX Researcher & Service Planner</div>
+      <h1 class="hero-name">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
+      <p class="hero-desc">심리학(학사)과 산업공학(석사, HCI 전공)의 두 배경을 바탕으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.<br/><br/>특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
+    </div>
+
+    <!-- 중단: 히어로 카드 3개 -->
+    <div class="hero-stats-row">
+      <a href="#projects" class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">기업 산학 프로젝트<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
+      </a>
+      <a href="#publications" class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">SCI 저널 게재<span class="stat-sub">IJHCS · IJHCI</span></div>
+      </a>
+      <a href="#projects" class="stat-card">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">서비스 기획 · 리서치 · 프로토타이핑</span></div>
+      </a>
+    </div>
+
+    <!-- 하단: 학력 -->
+    <div class="hero-edu-row">
+      <div class="about-label">Education</div>
+      <div class="hero-edu-grid">
+        <div class="edu-item-c">
+          <div class="edu-symbol">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
           </div>
-          <div class="stat-card">
-            <div class="stat-num">3</div>
-            <div class="stat-label">SCI 저널 게재<span class="stat-sub">IJHCS · IJHCI</span></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">5+</div>
-            <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">서비스 기획 · 리서치 · 프로토타이핑</span></div>
+          <div class="edu-content">
+            <div class="edu-school">연세대학교 석사</div>
+            <div class="edu-dept">산업공학과 · HCI 전공 · 스마트시티 심화트랙</div>
+            <div class="edu-detail-c">지도교수: 지용구 교수님 · 2023.09 – 2025.08</div>
+            <span class="edu-gpa-c">GPA 4.1 / 4.3</span>
           </div>
         </div>
-        <div>
-          <div class="about-label">Education</div>
-          <div class="edu-compact">
-            <div class="edu-item-c">
-              <div class="edu-symbol">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
-              </div>
-              <div class="edu-content">
-                <div class="edu-school">연세대학교 석사</div>
-                <div class="edu-dept">산업공학과 · HCI 전공 · 스마트시티 심화트랙</div>
-                <div class="edu-detail-c">지도교수: 지용구 교수님 · 2023.09 – 2025.08</div>
-                <span class="edu-gpa-c">GPA 4.1 / 4.3</span>
-              </div>
-            </div>
-            <div class="edu-item-c">
-              <div class="edu-symbol">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
-              </div>
-              <div class="edu-content">
-                <div class="edu-school">연세대학교 학사</div>
-                <div class="edu-dept">심리학과 · 실험 및 인지심리, HCI 수료</div>
-                <div class="edu-detail-c">2018.03 – 2023.08</div>
-                <span class="edu-gpa-c">GPA 3.63 / 4.3</span>
-              </div>
-            </div>
+        <div class="edu-item-c">
+          <div class="edu-symbol">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
+          </div>
+          <div class="edu-content">
+            <div class="edu-school">연세대학교 학사</div>
+            <div class="edu-dept">심리학과 · 실험 및 인지심리, HCI 수료</div>
+            <div class="edu-detail-c">2018.03 – 2023.08</div>
+            <span class="edu-gpa-c">GPA 3.63 / 4.3</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
+  </div>
 <!-- ═══ EXPERIENCE ═══ -->
 <section id="experience">
   <div class="section-header reveal">

@@ -42,10 +42,10 @@
     .nav-links a:hover{color:var(--green);}
 
     /* ── HERO (LANDING) ── */
-    #hero{padding-top:58px;min-height:100vh;display:grid;grid-template-columns:300px 1fr;background:var(--bg);}
+    #hero{padding-top:0;display:grid;grid-template-columns:300px 1fr;background:var(--bg);}
 
     /* Left panel */
-    .hero-left{background:var(--navy);display:flex;flex-direction:column;align-items:center;padding:2.2rem 1.8rem;position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;}
+    .hero-left{background:var(--navy);display:flex;flex-direction:column;align-items:center;padding:2.5rem 2rem;position:sticky;top:0;height:100vh;overflow-y:auto;justify-content:center;}
     .photo-slideshow{width:130px;height:130px;border-radius:50%;position:relative;overflow:hidden;border:3px solid rgba(45,125,90,0.5);margin-bottom:1.1rem;flex-shrink:0;}
     .photo-slideshow .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0;transition:opacity 0.8s;}
     .photo-slideshow .slide.active{opacity:1;}
@@ -65,7 +65,7 @@
     .profile-tag{font-size:0.65rem;font-weight:500;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.15);padding:0.18rem 0.5rem;border-radius:3px;}
 
     /* Right panel */
-    .hero-right{padding:2rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;gap:0;}
+    .hero-right{padding:2.5rem 3.5rem;display:flex;flex-direction:column;justify-content:flex-start;gap:0;}
 
     .hero-top{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
 
@@ -76,18 +76,19 @@
     .hero-name em{font-style:normal;color:var(--green);}
     .hero-desc{font-size:0.88rem;color:var(--ink-mid);line-height:1.8;margin-bottom:1.3rem;}
     .hero-ctas{display:flex;gap:0.6rem;flex-wrap:wrap;}
-    .hero-cta{font-size:0.75rem;font-weight:600;letter-spacing:0.05em;padding:0.6rem 1.2rem;text-decoration:none;border-radius:4px;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.4rem;}
-    .hero-cta.primary{background:var(--navy);color:#fff;}
-    .hero-cta.primary:hover{background:var(--navy-mid);}
-    .hero-cta.secondary{background:var(--green-light);color:var(--green);border:1px solid var(--green);}
+    .hero-cta{font-size:0.8rem;font-weight:600;letter-spacing:0.04em;padding:0.65rem 1.4rem;text-decoration:none;border-radius:5px;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.4rem;border:2px solid transparent;}
+    .hero-cta.primary{background:var(--navy);color:#fff;border-color:var(--navy);}
+    .hero-cta.primary:hover{background:#fff;color:var(--navy);}
+    .hero-cta.secondary{background:#fff;color:var(--green);border-color:var(--green);}
     .hero-cta.secondary:hover{background:var(--green);color:#fff;}
-    .hero-cta.ghost{background:var(--navy-light);color:var(--navy);border:1px solid var(--navy-light);}
+    .hero-cta.ghost{background:#fff;color:var(--navy);border-color:var(--navy);}
     .hero-cta.ghost:hover{background:var(--navy);color:#fff;}
 
     /* Stats */
     .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
-    .stat-card{background:#fff;padding:1rem 1.2rem;}
-    .stat-num{font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:0.25rem;}
+    .stat-card{background:#fff;padding:1rem 1.2rem;cursor:pointer;transition:all 0.2s;text-decoration:none;display:block;}
+    .stat-card:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(27,42,74,0.1);}
+    .stat-num{font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:0.25rem;} .stat-card .stat-label{color:var(--ink-mid);font-size:0.72rem;} .stat-card .stat-sub{color:var(--ink-muted);}
     .stat-label{font-size:0.72rem;font-weight:500;color:var(--ink-mid);line-height:1.4;}
     .stat-sub{font-size:0.67rem;color:var(--ink-muted);display:block;margin-top:0.1rem;}
 
@@ -130,6 +131,8 @@
     .exp-period-badge{font-size:0.72rem;color:var(--ink-muted);white-space:nowrap;}
     .exp-toggle{font-size:0.75rem;color:var(--ink-muted);margin-left:auto;transition:transform 0.25s;flex-shrink:0;}
     .exp-card.open .exp-toggle{transform:rotate(180deg);}
+    details[open] .exp-toggle{transform:rotate(180deg);}
+    details .exp-toggle{transition:transform 0.25s;}
     .exp-details{display:block;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line);}
     .exp-card.open .exp-details{display:block;}
     .exp-details ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
@@ -168,17 +171,17 @@
     .proj-nav-btn{background:rgba(255,255,255,0.15);border:none;color:#fff;width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .proj-nav-btn:hover{background:rgba(255,255,255,0.3);}
 
-    .proj-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;background:transparent;border:none;border-top:none;border-radius:0 0 6px 6px;overflow:hidden;padding-top:1.2rem;}
+    .proj-cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:1.2rem;background:transparent;border:none;padding-top:0;}
 
     /* Gallery view (모아보기) */
     .proj-gallery{display:block;}
     .proj-gallery.active{display:block;}
-    .proj-expanded{display:none;}
+    .proj-expanded{display:none;} .proj-expanded.active{display:block;}
     .proj-expanded.active{display:block;}
     .proj-expanded .proj-cards-grid-full{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
 
     .proj-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;cursor:pointer;border-radius:8px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.05);}
-    .proj-card-img{width:100%;height:150px;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;position:relative;}
+    .proj-card-img{width:100%;aspect-ratio:16/9;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;position:relative;}
     .proj-card-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--navy-light),var(--line));display:flex;align-items:center;justify-content:center;color:var(--navy-mid);font-size:2rem;}
     .proj-card-hover{position:absolute;inset:0;background:rgba(27,42,74,0.88);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s;}
     .proj-card:hover .proj-card-hover{opacity:1;}
@@ -220,17 +223,21 @@
     }
     .proj-tab:hover{color:var(--navy);background:var(--navy-light);}
     .proj-tab.active{color:var(--navy);border-bottom-color:var(--navy);background:var(--navy-light);}
-    .proj-tab-icon{font-size:1rem;}
+    .proj-tab-icon{font-size:1.1rem;}
     .proj-tab-label{font-size:0.82rem;}
-    .proj-tab-panel{display:none;}
-    .proj-tab-panel.active{display:block;}
+    .proj-tab-panel{display:none;} .proj-tab-panel.active{display:block;} 
+    
     .proj-category-desc-bar{
-      font-size:0.8rem;color:var(--ink-muted);
-      margin-bottom:1.2rem;
-      padding:0.6rem 1rem;
-      background:var(--navy-light);
-      border-radius:6px;
-      border-left:3px solid var(--navy);
+      font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+      color:var(--navy);
+      margin-bottom:1.5rem;
+      padding:0;
+      background:transparent;
+      border:none;
+      display:flex;align-items:center;gap:0.6rem;
+    }
+    .proj-category-desc-bar::before{
+      content:'';width:24px;height:2px;background:var(--green);display:block;flex-shrink:0;
     }
 
     /* ── PUBLICATIONS ── */
@@ -314,15 +321,6 @@
 </head>
 <body>
 
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">김나경</a>
-  <ul class="nav-links">
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#publications">Publications</a></li>
-  </ul>
-</nav>
 
 <!-- ═══ HERO ═══ -->
 <div id="hero">
@@ -367,25 +365,21 @@
         <div class="hero-eyebrow">UX Researcher & Service Planner</div>
         <h1 class="hero-name">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
         <p class="hero-desc">심리학(학사)과 산업공학(석사, HCI 전공)의 두 배경을 바탕으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.<br/><br/>특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
-        <div class="hero-ctas">
-          <a href="#projects" class="hero-cta primary">프로젝트 보기</a>
-          <a href="#awards" class="hero-cta secondary">활동 보기</a>
-          <a href="#publications" class="hero-cta ghost">연구 활동</a>
-        </div>
+
       </div>
       <div style="display:flex;flex-direction:column;gap:1.2rem;">
         <div class="hero-stats">
           <div class="stat-card">
             <div class="stat-num">3</div>
-            <div class="stat-label">기업 산학 연구<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
+            <div class="stat-label">기업 산학 프로젝트<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
           </div>
           <div class="stat-card">
             <div class="stat-num">3</div>
-            <div class="stat-label">SCI 저널 논문<span class="stat-sub">IJHCS · IJHCI</span></div>
+            <div class="stat-label">SCI 저널 게재<span class="stat-sub">IJHCS · IJHCI</span></div>
           </div>
           <div class="stat-card">
             <div class="stat-num">5+</div>
-            <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">리서치 · 기획 · 프로토타이핑</span></div>
+            <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">서비스 기획 · 리서치 · 프로토타이핑</span></div>
           </div>
         </div>
         <div>
@@ -429,7 +423,7 @@
   </div>
   <div class="exp-grid reveal">
 
-    <details class="exp-card" open>
+    <details class="exp-card">
       <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
         <div class="exp-logo">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Naver_Corporation_Logo.svg/200px-Naver_Corporation_Logo.svg.png" alt="Naver" onerror="this.parentElement.innerHTML='NAVER'"/>
@@ -591,7 +585,7 @@
   </div>
 
   <!-- Expanded (전체 펼쳐보기) -->
-  <div class="proj-expanded" id="proj-expanded" style="display:none;">
+  <div class="proj-expanded" id="proj-expanded">
     <div class="proj-cards-grid-full reveal">
       <div class="proj-card" onclick="openProjModal('ax1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">AX · 석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험</div></div></div>
       <div class="proj-card" onclick="openProjModal('ax2')"><div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">AX · SKT & 고용노동부 · 2025</div><div class="proj-card-title">시각장애인을 위한 에이닷 포용성 개선 프로젝트</div><div class="proj-card-desc">에이닷 AI 에이전트 활용 접근성 서비스 기획 (장려상)</div></div></div>
@@ -618,7 +612,7 @@
 <!-- ═══ AWARDS & ACTIVITIES ═══ -->
 <section id="awards" style="background:var(--bg-alt);">
   <div class="section-header reveal">
-    <span class="section-num">04</span>
+    <span class="section-num">03</span>
     <h2 class="section-title">Awards & Activities</h2>
     <div class="section-line"></div>
   </div>
@@ -740,7 +734,7 @@
 <!-- ═══ PUBLICATIONS ═══ -->
 <section id="publications">
   <div class="section-header reveal">
-    <span class="section-num">05</span>
+    <span class="section-num">04</span>
     <h2 class="section-title">Publications</h2>
     <div class="section-line"></div>
   </div>
@@ -789,7 +783,7 @@
 
       <div class="pub-item" onclick="openPubModal('pub3')">
         <div class="pub-item-inner">
-          <div class="pub-year">2025</div>
+          <div class="pub-year">2026</div>
           <div class="pub-content">
             <div class="pub-title-row">
               <div class="pub-title">Effects of Autonomous Vehicle Braking Behavior and Kinematic eHMI on Pedestrian Crossing Decisions</div>
@@ -798,7 +792,7 @@
                 <a href="#" target="_blank" class="pub-btn pub-btn-doi" onclick="e=>e.stopPropagation()">DOI</a>
               </div>
             </div>
-            <div class="pub-venue">Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji · International Journal of Human-Computer Interaction · Q1, SCIE</div>
+            <div class="pub-venue">Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji · International Journal of Human-Computer Interaction · Q1, SSCI·SCIE</div>
             <div class="pub-keywords">
               <span class="pub-kw">Autonomous Vehicle</span><span class="pub-kw">eHMI</span><span class="pub-kw">Pedestrian</span><span class="pub-kw">Crossing Decision</span><span class="pub-kw">Braking Behavior</span>
             </div>
@@ -860,10 +854,7 @@
 <!-- ═══ SCRIPTS ═══ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
-try {
-  const navbar=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
-} catch(e){}
+
 
 // Slideshow
 const slides=document.querySelectorAll('#slideshow .slide');
@@ -888,9 +879,11 @@ function toggleExp(card){card.classList.toggle('open');}
 function switchTab(idx, btn){
   try {
     document.querySelectorAll('.proj-tab').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.proj-tab-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.proj-tab-panel').forEach(p=>{p.classList.remove('active');p.style.display='none';});
     btn.classList.add('active');
-    document.getElementById('tab-panel-'+idx).classList.add('active');
+    const panel = document.getElementById('tab-panel-'+idx);
+    panel.classList.add('active');
+    panel.style.display='block';
   } catch(e){ console.log(e); }
 }
 function setProjView(view,btn){
@@ -908,6 +901,21 @@ function setProjView(view,btn){
     }
   } catch(e){ console.log(e); }
 }
+// Initialize on load
+window.addEventListener('DOMContentLoaded', function(){
+  try {
+    // Tab panels: show active, hide rest
+    document.querySelectorAll('.proj-tab-panel').forEach((p)=>{
+      p.style.display = p.classList.contains('active') ? 'block' : 'none';
+    });
+    // Hide expanded view
+    const exp = document.getElementById('proj-expanded');
+    if(exp) exp.style.display='none';
+    // Show gallery
+    const gal = document.getElementById('proj-gallery');
+    if(gal) gal.style.display='block';
+  } catch(e){}
+});
 
 // Project slider
 let currentPanel=0;
@@ -957,7 +965,7 @@ function closeProjModalBtn(){document.getElementById('proj-modal-overlay').class
 const pubData={
   pub1:{journal:'International Journal of Human-Computer Studies (IJHCS) · Q1, SSCI·SCIE',title:'Exploratory Search with Generative AI: An Empirical Study on the Impact of Interaction Design Strategies on Information Exploration and Cognitive Load',authors:'<b>Nakyung Kim</b>, Yong Gu Ji',year:'2026',overview:'생성형 AI를 활용한 검색에서 사용자 입력 주도성과 시스템 응답 출력 설계 요소가 사용자의 탐색적 검색 경험에 미치는 영향 연구.',method:['Claude API를 호출하여 사용자 평가용 AI 챗봇 구현, Python 코딩과 Prompt Engineering을 통해 조건별 설계 수준 통제','40명의 사용자 설문 및 로그 데이터를 수집하여 SPSS 기반 통계 분석'],result:'응답 공개 방식과 프롬프트 작성 지원에 대해 사용자에게 더 많은 통제력을 제공하는 것이 지식 변화, 검색 참여감, 탐색 행동 향상과 인지부하 감소에 유의미한 효과를 보임 (p < .05).',pdf:'your-paper-1.pdf',doi:'#',keywords:['Generative AI','Exploratory Search','Cognitive Load','Prompt Engineering','Information Retrieval']},
   pub2:{journal:'International Journal of Human-Computer Studies (IJHCS) · Q1, SSCI·SCIE',title:'Service recovery in robotic deliveries: Effects of apology strategy and anthropomorphism under delays of food delivery',authors:'Suryeon Kim, <b>Nakyung Kim</b>, Yong Gu Ji',year:'2026',overview:'배달로봇의 서비스 실패 상황(음식 배달 지연)에서 의인화 수준과 사과 전략이 사용자의 신뢰·사용의도·태도에 미치는 영향 연구.',method:['Twinmotion으로 VR 환경 구현, 의인화 수준(고,저) × 사과 전략(3가지) 조건 설계','40명 피험자 대상 실험 및 SPSS 통계 분석'],result:'전반적으로 의인화 수준이 높은 사과 전략이 긍정적 효과. 공감 전략의 효과성은 피험자 특성에 따라 상이. 배달로봇 멘탈모델이 유의미한 공변량으로 작용 (p < .05).',pdf:'your-paper-2.pdf',doi:'#',keywords:['Delivery Robot','Service Recovery','Anthropomorphism','Apology Strategy','HRI']},
-  pub3:{journal:'International Journal of Human-Computer Interaction (IJHCI) · Q1, SCIE',title:'Effects of Autonomous Vehicle Braking Behavior and Kinematic eHMI on Pedestrian Crossing Decisions',authors:'Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji',year:'2025',overview:'자율주행 차량의 제동 행동과 키네마틱 eHMI가 보행자의 횡단 결정에 미치는 영향을 분석한 연구.',method:['자율주행 차량의 제동 행동 및 eHMI 설계 요소 조작','보행자 대상 실험 설계 및 수행, 통계 분석'],result:'IJHCI 게재 및 HCII 2025 학회 발표로 이어짐.',pdf:'your-paper-3.pdf',doi:'#',keywords:['Autonomous Vehicle','eHMI','Pedestrian','Crossing Decision','Braking Behavior']},
+  pub3:{journal:'International Journal of Human-Computer Interaction (IJHCI) · Q1, SSCI·SCIE',title:'Effects of Autonomous Vehicle Braking Behavior and Kinematic eHMI on Pedestrian Crossing Decisions',authors:'Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji',year:'2025',overview:'자율주행 차량의 제동 행동과 키네마틱 eHMI가 보행자의 횡단 결정에 미치는 영향을 분석한 연구.',method:['자율주행 차량의 제동 행동 및 eHMI 설계 요소 조작','보행자 대상 실험 설계 및 수행, 통계 분석'],result:'IJHCI 게재 및 HCII 2025 학회 발표로 이어짐.',pdf:'your-paper-3.pdf',doi:'#',keywords:['Autonomous Vehicle','eHMI','Pedestrian','Crossing Decision','Braking Behavior']},
   conf1:{journal:'HCI International 2025 Conference (HCII 2025)',title:"I'm Going to Stop, Will You Cross?: The Impact of Vehicle's eHMI on Pedestrian's Decision-Making",authors:"Jongwoo Park, <b>Nakyung Kim</b>, Sujeong Park, Gyuhee Park, Suhwan Jung, Yong Gu Ji",year:'2025',overview:'자율주행 차량의 eHMI가 보행자 횡단 결정에 미치는 영향을 분석한 학회 발표 논문.',method:['eHMI 설계 요소 조작 및 보행자 대상 실험','통계 분석 및 결과 도출'],result:'HCI International 2025 Conference 발표.',pdf:'your-conf-1.pdf',doi:'',keywords:['eHMI','Pedestrian Safety','Autonomous Vehicle','Decision Making']},
   conf2:{journal:'22nd Triennial Congress of International Ergonomics Association (IEA 2024)',title:'A Study on the Impact of Screen Curvature and Control-Display Gain on Pointing Performance in Large Displays',authors:'<b>Nakyung Kim</b>, Suryeon Kim, Young Woo Kim, Yong Gu Ji',year:'2024',overview:'대형 곡률 디스플레이에서 화면 곡률과 Control-Display 이득이 포인팅 수행에 미치는 영향 연구.',method:['과업별 실험 설계 및 실험 환경 구현','사용자 평가 실험 수행, SPSS 통계 분석'],result:'인간공학적 최적 모니터 조건 도출. IEA 2024 학회 발표.',pdf:'your-conf-2.pdf',doi:'',keywords:['Large Display','Screen Curvature','Pointing Performance','Ergonomics']}
 };
@@ -990,10 +998,7 @@ function closePubModal(e){if(e.target===document.getElementById('pub-modal-overl
 <!-- ═══ SCRIPTS ═══ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
-try {
-  const navbar=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
-} catch(e){}
+
 
 // Slideshow
 const slides=document.querySelectorAll('#slideshow .slide');
@@ -1018,9 +1023,11 @@ function toggleExp(card){card.classList.toggle('open');}
 function switchTab(idx, btn){
   try {
     document.querySelectorAll('.proj-tab').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.proj-tab-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.proj-tab-panel').forEach(p=>{p.classList.remove('active');p.style.display='none';});
     btn.classList.add('active');
-    document.getElementById('tab-panel-'+idx).classList.add('active');
+    const panel = document.getElementById('tab-panel-'+idx);
+    panel.classList.add('active');
+    panel.style.display='block';
   } catch(e){ console.log(e); }
 }
 function setProjView(view,btn){
@@ -1038,6 +1045,21 @@ function setProjView(view,btn){
     }
   } catch(e){ console.log(e); }
 }
+// Initialize on load
+window.addEventListener('DOMContentLoaded', function(){
+  try {
+    // Tab panels: show active, hide rest
+    document.querySelectorAll('.proj-tab-panel').forEach((p)=>{
+      p.style.display = p.classList.contains('active') ? 'block' : 'none';
+    });
+    // Hide expanded view
+    const exp = document.getElementById('proj-expanded');
+    if(exp) exp.style.display='none';
+    // Show gallery
+    const gal = document.getElementById('proj-gallery');
+    if(gal) gal.style.display='block';
+  } catch(e){}
+});
 
 // Project slider
 let currentPanel=0;
@@ -1087,7 +1109,7 @@ function closeProjModalBtn(){document.getElementById('proj-modal-overlay').class
 const pubData={
   pub1:{journal:'International Journal of Human-Computer Studies (IJHCS) · Q1, SSCI·SCIE',title:'Exploratory Search with Generative AI: An Empirical Study on the Impact of Interaction Design Strategies on Information Exploration and Cognitive Load',authors:'<b>Nakyung Kim</b>, Yong Gu Ji',year:'2026',overview:'생성형 AI를 활용한 검색에서 사용자 입력 주도성과 시스템 응답 출력 설계 요소가 사용자의 탐색적 검색 경험에 미치는 영향 연구.',method:['Claude API를 호출하여 사용자 평가용 AI 챗봇 구현, Python 코딩과 Prompt Engineering을 통해 조건별 설계 수준 통제','40명의 사용자 설문 및 로그 데이터를 수집하여 SPSS 기반 통계 분석'],result:'응답 공개 방식과 프롬프트 작성 지원에 대해 사용자에게 더 많은 통제력을 제공하는 것이 지식 변화, 검색 참여감, 탐색 행동 향상과 인지부하 감소에 유의미한 효과를 보임 (p < .05).',pdf:'your-paper-1.pdf',doi:'#',keywords:['Generative AI','Exploratory Search','Cognitive Load','Prompt Engineering','Information Retrieval']},
   pub2:{journal:'International Journal of Human-Computer Studies (IJHCS) · Q1, SSCI·SCIE',title:'Service recovery in robotic deliveries: Effects of apology strategy and anthropomorphism under delays of food delivery',authors:'Suryeon Kim, <b>Nakyung Kim</b>, Yong Gu Ji',year:'2026',overview:'배달로봇의 서비스 실패 상황(음식 배달 지연)에서 의인화 수준과 사과 전략이 사용자의 신뢰·사용의도·태도에 미치는 영향 연구.',method:['Twinmotion으로 VR 환경 구현, 의인화 수준(고,저) × 사과 전략(3가지) 조건 설계','40명 피험자 대상 실험 및 SPSS 통계 분석'],result:'전반적으로 의인화 수준이 높은 사과 전략이 긍정적 효과. 공감 전략의 효과성은 피험자 특성에 따라 상이. 배달로봇 멘탈모델이 유의미한 공변량으로 작용 (p < .05).',pdf:'your-paper-2.pdf',doi:'#',keywords:['Delivery Robot','Service Recovery','Anthropomorphism','Apology Strategy','HRI']},
-  pub3:{journal:'International Journal of Human-Computer Interaction (IJHCI) · Q1, SCIE',title:'Effects of Autonomous Vehicle Braking Behavior and Kinematic eHMI on Pedestrian Crossing Decisions',authors:'Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji',year:'2025',overview:'자율주행 차량의 제동 행동과 키네마틱 eHMI가 보행자의 횡단 결정에 미치는 영향을 분석한 연구.',method:['자율주행 차량의 제동 행동 및 eHMI 설계 요소 조작','보행자 대상 실험 설계 및 수행, 통계 분석'],result:'IJHCI 게재 및 HCII 2025 학회 발표로 이어짐.',pdf:'your-paper-3.pdf',doi:'#',keywords:['Autonomous Vehicle','eHMI','Pedestrian','Crossing Decision','Braking Behavior']},
+  pub3:{journal:'International Journal of Human-Computer Interaction (IJHCI) · Q1, SSCI·SCIE',title:'Effects of Autonomous Vehicle Braking Behavior and Kinematic eHMI on Pedestrian Crossing Decisions',authors:'Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji',year:'2025',overview:'자율주행 차량의 제동 행동과 키네마틱 eHMI가 보행자의 횡단 결정에 미치는 영향을 분석한 연구.',method:['자율주행 차량의 제동 행동 및 eHMI 설계 요소 조작','보행자 대상 실험 설계 및 수행, 통계 분석'],result:'IJHCI 게재 및 HCII 2025 학회 발표로 이어짐.',pdf:'your-paper-3.pdf',doi:'#',keywords:['Autonomous Vehicle','eHMI','Pedestrian','Crossing Decision','Braking Behavior']},
   conf1:{journal:'HCI International 2025 Conference (HCII 2025)',title:"I'm Going to Stop, Will You Cross?: The Impact of Vehicle's eHMI on Pedestrian's Decision-Making",authors:"Jongwoo Park, <b>Nakyung Kim</b>, Sujeong Park, Gyuhee Park, Suhwan Jung, Yong Gu Ji",year:'2025',overview:'자율주행 차량의 eHMI가 보행자 횡단 결정에 미치는 영향을 분석한 학회 발표 논문.',method:['eHMI 설계 요소 조작 및 보행자 대상 실험','통계 분석 및 결과 도출'],result:'HCI International 2025 Conference 발표.',pdf:'your-conf-1.pdf',doi:'',keywords:['eHMI','Pedestrian Safety','Autonomous Vehicle','Decision Making']},
   conf2:{journal:'22nd Triennial Congress of International Ergonomics Association (IEA 2024)',title:'A Study on the Impact of Screen Curvature and Control-Display Gain on Pointing Performance in Large Displays',authors:'<b>Nakyung Kim</b>, Suryeon Kim, Young Woo Kim, Yong Gu Ji',year:'2024',overview:'대형 곡률 디스플레이에서 화면 곡률과 Control-Display 이득이 포인팅 수행에 미치는 영향 연구.',method:['과업별 실험 설계 및 실험 환경 구현','사용자 평가 실험 수행, SPSS 통계 분석'],result:'인간공학적 최적 모니터 조건 도출. IEA 2024 학회 발표.',pdf:'your-conf-2.pdf',doi:'',keywords:['Large Display','Screen Curvature','Pointing Performance','Ergonomics']}
 };

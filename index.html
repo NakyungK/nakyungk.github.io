@@ -65,9 +65,9 @@
     .profile-tag{font-size:0.65rem;font-weight:500;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.15);padding:0.18rem 0.5rem;border-radius:3px;}
 
     /* Right panel */
-    .hero-right{padding:2.5rem 3.5rem;display:flex;flex-direction:column;justify-content:flex-start;gap:0;}
+    .hero-right{padding:2rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;gap:0;}
 
-    .hero-top{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-bottom:2rem;}
+    .hero-top{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
 
     .hero-intro{}
     .hero-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem;}
@@ -92,7 +92,7 @@
     .stat-sub{font-size:0.67rem;color:var(--ink-muted);display:block;margin-top:0.1rem;}
 
     /* About + Education inline */
-    .hero-about{border-top:1px solid var(--line);padding-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+    .hero-about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
     .about-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.5rem;}
     .about-label::before{content:'';width:14px;height:2px;background:var(--green);display:block;}
     .about-text{font-size:0.86rem;color:var(--ink-mid);line-height:1.8;}
@@ -118,8 +118,8 @@
     .section-line{flex:1;height:1px;background:var(--line);}
 
     /* ── EXPERIENCE ── */
-    .exp-grid{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
-    .exp-card{background:#fff;padding:1.6rem 2rem;cursor:pointer;transition:background 0.2s;}
+    .exp-grid{display:flex;flex-direction:column;gap:1rem;background:transparent;border:none;border-radius:0;overflow:visible;}
+    .exp-card{background:#fff;padding:1.6rem 2rem;cursor:pointer;transition:background 0.2s;border:1px solid var(--line);border-radius:10px;}
     .exp-card:hover{background:var(--bg-alt);}
     .exp-card-header{display:flex;align-items:center;gap:1.2rem;}
     .exp-logo{width:44px;height:44px;border-radius:8px;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:700;color:var(--navy);flex-shrink:0;overflow:hidden;}
@@ -130,7 +130,7 @@
     .exp-period-badge{font-size:0.72rem;color:var(--ink-muted);white-space:nowrap;}
     .exp-toggle{font-size:0.75rem;color:var(--ink-muted);margin-left:auto;transition:transform 0.25s;flex-shrink:0;}
     .exp-card.open .exp-toggle{transform:rotate(180deg);}
-    .exp-details{display:none;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line);}
+    .exp-details{display:block;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line);}
     .exp-card.open .exp-details{display:block;}
     .exp-details ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
     .exp-details li{font-size:0.85rem;color:var(--ink-mid);line-height:1.7;padding-left:1rem;position:relative;}
@@ -146,8 +146,18 @@
     .proj-slider{position:relative;overflow:hidden;}
     .proj-slider-track{display:flex;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);}
     .proj-panel{min-width:100%;display:flex;gap:1.5rem;}
-    .proj-panel-side{width:60px;flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:width 0.4s;}
-    .proj-panel-side-label{writing-mode:vertical-rl;font-size:0.72rem;font-weight:600;color:var(--ink-muted);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;}
+    .proj-panel-side{
+  width:72px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;padding:0.8rem 0.4rem;
+  border-radius:10px;
+  background:rgba(27,42,74,0.06);
+  border:1px solid var(--line);
+  transition:all 0.2s;
+  user-select:none;
+}
+.proj-panel-side:hover{background:var(--navy);border-color:var(--navy);}
+.proj-panel-side:hover .proj-panel-side-label{color:#fff;}
+    .proj-panel-side-label{writing-mode:horizontal-tb;font-size:0.7rem;font-weight:600;color:var(--ink-muted);letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;text-align:center;line-height:1.4;}
     .proj-panel-side:hover .proj-panel-side-label{color:var(--navy);}
     .proj-panel-main{flex:1;display:flex;flex-direction:column;}
 
@@ -161,7 +171,7 @@
     .proj-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;background:transparent;border:none;border-top:none;border-radius:0 0 6px 6px;overflow:hidden;padding-top:1.2rem;}
 
     /* Gallery view (모아보기) */
-    .proj-gallery{display:none;}
+    .proj-gallery{display:block;}
     .proj-gallery.active{display:block;}
     .proj-expanded{display:none;}
     .proj-expanded.active{display:block;}
@@ -193,6 +203,35 @@
     .proj-modal-body li{margin-left:1.2rem;margin-bottom:0.35rem;}
     .proj-modal-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
     .proj-modal-keyword{font-size:0.7rem;font-weight:500;color:var(--navy);background:var(--navy-light);padding:0.2rem 0.6rem;border-radius:3px;}
+
+
+    /* ── PROJECT TABS ── */
+    .proj-tab-nav{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--line);padding-bottom:0;}
+    .proj-tab{
+      display:flex;align-items:center;gap:0.5rem;
+      padding:0.65rem 1.3rem;
+      font-size:0.82rem;font-weight:600;
+      color:var(--ink-muted);
+      background:transparent;border:none;cursor:pointer;
+      border-bottom:2px solid transparent;
+      margin-bottom:-2px;
+      border-radius:6px 6px 0 0;
+      transition:all 0.2s;
+    }
+    .proj-tab:hover{color:var(--navy);background:var(--navy-light);}
+    .proj-tab.active{color:var(--navy);border-bottom-color:var(--navy);background:var(--navy-light);}
+    .proj-tab-icon{font-size:1rem;}
+    .proj-tab-label{font-size:0.82rem;}
+    .proj-tab-panel{display:none;}
+    .proj-tab-panel.active{display:block;}
+    .proj-category-desc-bar{
+      font-size:0.8rem;color:var(--ink-muted);
+      margin-bottom:1.2rem;
+      padding:0.6rem 1rem;
+      background:var(--navy-light);
+      border-radius:6px;
+      border-left:3px solid var(--navy);
+    }
 
     /* ── PUBLICATIONS ── */
     .pub-section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);padding:0.5rem 0 0.9rem;border-bottom:2px solid var(--green);display:flex;align-items:center;gap:0.5rem;margin-bottom:0;}
@@ -251,7 +290,7 @@
     footer{padding:1.3rem 3rem;background:var(--navy);display:flex;justify-content:space-between;align-items:center;font-size:0.76rem;color:rgba(255,255,255,0.45);}
 
     /* ── REVEAL ── */
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .reveal{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
 
     /* ── RESPONSIVE ── */
@@ -280,8 +319,8 @@
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#publications">Publications</a></li>
     <li><a href="#awards">Awards</a></li>
+    <li><a href="#publications">Publications</a></li>
   </ul>
 </nav>
 
@@ -327,61 +366,52 @@
       <div class="hero-intro">
         <div class="hero-eyebrow">UX Researcher & Service Planner</div>
         <h1 class="hero-name">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
-        <p class="hero-desc">연세대학교 산업공학과(HCI 전공) 석사로, 생성형 AI 인터페이스·자율주행·로봇 서비스의 사용자 경험을 연구합니다. HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 바탕으로 리서치와 실무를 연결합니다.<br/><br/>특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
+        <p class="hero-desc">심리학(학사)과 산업공학(석사, HCI 전공)의 두 배경을 바탕으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.<br/><br/>특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
         <div class="hero-ctas">
           <a href="#projects" class="hero-cta primary">프로젝트 보기</a>
           <a href="#awards" class="hero-cta secondary">활동 보기</a>
           <a href="#publications" class="hero-cta ghost">연구 활동</a>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-label">기업 산학 연구<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-label">SCI 저널 논문<span class="stat-sub">IJHCS · IJHCI</span></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">5+</div>
-          <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">리서치 · 기획 · 프로토타이핑</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- About + Education -->
-    <div class="hero-about">
-      <div>
-        <div class="about-label">About Me</div>
-        <div class="about-text">
-          <p>심리학(학사)과 산업공학(석사)의 두 배경을 바탕으로, 사용자의 행동과 인지를 깊이 이해하고 이를 더 나은 서비스와 인터페이스 설계로 연결하는 데 관심이 많습니다.</p>
-          <p>생성형 AI 인터페이스, 자율주행 eHMI, 로봇 서비스 경험 등 다양한 도메인에서 사용자 연구를 수행했으며, <span class="hl-green">SCI 저널 총 3편 게재</span>라는 성과를 이뤘습니다.</p>
-        </div>
-      </div>
-      <div>
-        <div class="about-label">Education</div>
-        <div class="edu-compact">
-          <div class="edu-item-c">
-            <div class="edu-symbol">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
-            </div>
-            <div class="edu-content">
-              <div class="edu-school">연세대학교 석사</div>
-              <div class="edu-dept">산업공학과 · HCI 전공 · 스마트시티 심화트랙</div>
-              <div class="edu-detail-c">지도교수: 지용구 교수님 · 2023.09 – 2025.08</div>
-              <span class="edu-gpa-c">GPA 4.1 / 4.3</span>
-            </div>
+      <div style="display:flex;flex-direction:column;gap:1.2rem;">
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">기업 산학 연구<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
           </div>
-          <div class="edu-item-c">
-            <div class="edu-symbol">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">SCI 저널 논문<span class="stat-sub">IJHCS · IJHCI</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">리서치 · 기획 · 프로토타이핑</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="about-label">Education</div>
+          <div class="edu-compact">
+            <div class="edu-item-c">
+              <div class="edu-symbol">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
+              </div>
+              <div class="edu-content">
+                <div class="edu-school">연세대학교 석사</div>
+                <div class="edu-dept">산업공학과 · HCI 전공 · 스마트시티 심화트랙</div>
+                <div class="edu-detail-c">지도교수: 지용구 교수님 · 2023.09 – 2025.08</div>
+                <span class="edu-gpa-c">GPA 4.1 / 4.3</span>
+              </div>
             </div>
-            <div class="edu-content">
-              <div class="edu-school">연세대학교 학사</div>
-              <div class="edu-dept">심리학과 · 실험 및 인지심리, HCI 수료</div>
-              <div class="edu-detail-c">2018.03 – 2023.08</div>
-              <span class="edu-gpa-c">GPA 3.63 / 4.3</span>
+            <div class="edu-item-c">
+              <div class="edu-symbol">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
+              </div>
+              <div class="edu-content">
+                <div class="edu-school">연세대학교 학사</div>
+                <div class="edu-dept">심리학과 · 실험 및 인지심리, HCI 수료</div>
+                <div class="edu-detail-c">2018.03 – 2023.08</div>
+                <span class="edu-gpa-c">GPA 3.63 / 4.3</span>
+              </div>
             </div>
           </div>
         </div>
@@ -399,18 +429,18 @@
   </div>
   <div class="exp-grid reveal">
 
-    <div class="exp-card" onclick="toggleExp(this)">
-      <div class="exp-card-header">
+    <details class="exp-card" open>
+      <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
         <div class="exp-logo">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Naver_Corporation_Logo.svg/200px-Naver_Corporation_Logo.svg.png" alt="Naver" onerror="this.parentElement.innerHTML='NAVER'"/>
         </div>
         <div class="exp-header-text">
-          <div class="exp-role-title">HyperCLOVA X 기반 기획 및 리서치 인턴</div>
-          <div class="exp-company-name">Naver Cloud</div>
+          <div class="exp-role-title">Hyperscale AI 기반 기획 및 리서치 인턴</div>
+          <div class="exp-company-name">Naver Cloud · Hyperscale AI Planning</div>
         </div>
-        <div class="exp-period-badge">2025.11 – 2026.02</div>
+        <div class="exp-period-badge">2025.11 – 현재 재직중</div>
         <div class="exp-toggle">▼</div>
-      </div>
+      </summary>
       <div class="exp-details">
         <ul>
           <li>B2B 신규 AI 모델의 핵심 역량 파악을 위한 경쟁사·시장 리서치 문서화 및 MVP 기획 참여, 내부 미팅 발표</li>
@@ -419,18 +449,38 @@
           <li>지식 그래프 기반 RAG 논문을 테크팀·기획팀 합동 세미나에서 2회 발제</li>
         </ul>
       </div>
-    </div>
+    </details>
 
-    <div class="exp-card" onclick="toggleExp(this)">
-      <div class="exp-card-header">
-        <div class="exp-logo" style="font-size:0.6rem;font-weight:700;color:var(--navy);text-align:center;line-height:1.2;">THE<br/>MIL</div>
+    <details class="exp-card">
+      <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
+        <div class="exp-logo" style="font-size:0.62rem;font-weight:700;color:var(--navy);text-align:center;line-height:1.3;">경상<br/>국립대</div>
+        <div class="exp-header-text">
+          <div class="exp-role-title">석사후 연구원</div>
+          <div class="exp-company-name">경상국립대학교 · Human Interaction & Experience Lab</div>
+        </div>
+        <div class="exp-period-badge">2025.09 – 2025.11</div>
+        <div class="exp-toggle">▼</div>
+      </summary>
+      <div class="exp-details">
+        <ul>
+          <li>학생들의 AI 과의존 행동 측정 척도 개발 연구 수행</li>
+          <li>체계적 문헌조사를 통해 행동 지표 기반 AI 과의존 행동 문항 개발, Bloom's Taxonomy를 적용해 인지 단계별 척도 구성</li>
+          <li>1,000명 학생 대상 설문 수행 및 확인적 요인분석(CFA)으로 인지적 사고 단계에 따른 과의존 행동 분류와 개인적 요인의 영향 검증</li>
+          <li>현재 논문 작성 중</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="exp-card">
+      <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
+        <div class="exp-logo" style="font-size:0.62rem;font-weight:700;color:var(--navy);text-align:center;line-height:1.3;">THE<br/>MIL</div>
         <div class="exp-header-text">
           <div class="exp-role-title">Research and Design Intern</div>
           <div class="exp-company-name">The Millennium Project · Washington DC, US</div>
         </div>
         <div class="exp-period-badge">2022.10 – 2022.12</div>
         <div class="exp-toggle">▼</div>
-      </div>
+      </summary>
       <div class="exp-details">
         <ul>
           <li>AGI 전환을 대비하는 컨퍼런스 스피치 자료 리서치 및 PPT 제작</li>
@@ -439,7 +489,7 @@
           <li>워드프레스 통계 앱으로 방문 많은 페이지 배치, SEO를 위한 XML sitemaps 생성 및 키워드 배치</li>
         </ul>
       </div>
-    </div>
+    </details>
 
   </div>
 </section>
@@ -460,127 +510,88 @@
 
   <!-- Gallery (카테고리별) -->
   <div class="proj-gallery active" id="proj-gallery">
-    <div class="proj-slider" id="proj-slider">
-      <div class="proj-slider-track" id="proj-track">
 
-        <!-- Panel 0: UXUI -->
-        <div class="proj-panel" data-idx="0">
-          <div class="proj-panel-side" onclick="slideToPanel(2)" title="Human-AI/Robot Interaction">
-            <span class="proj-panel-side-label">Human-AI ↑</span>
-          </div>
-          <div class="proj-panel-main">
-            <div class="proj-category-box">
-              <div>
-                <div class="proj-category-title">UX/UI Project</div>
-                <div class="proj-category-desc">사용자 리서치 기반 서비스 기획 및 UI 설계</div>
-              </div>
-              <div class="proj-category-nav">
-                <button class="proj-nav-btn" onclick="slideToPanel(2)">←</button>
-                <button class="proj-nav-btn" onclick="slideToPanel(1)">→</button>
-              </div>
-            </div>
-            <div class="proj-cards-grid">
-              <div class="proj-card" onclick="openProjModal('uxui1')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🚜</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">사업장 인터뷰·WDM 작업 분석, 원격제어 시뮬레이터 와이어프레임 개발</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('uxui2')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">⚡</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">현대 NGV 산학 · 2023</div><div class="proj-card-title">전기차 자동 충전 시나리오 및 UXUI 개발</div><div class="proj-card-desc">전기차 사용자 사용성 인터뷰, 시나리오 기반 UI 프로토타입 구현</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('uxui3')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🛒</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">교내 프로젝트 · 2020</div><div class="proj-card-title">이커머스 라이브커머스 UX 전략 수립</div><div class="proj-card-desc">설문·인터뷰 기반 한정성 UX 요소의 구매 결정 영향 검증</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('uxui4')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">📱</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">한이음 ICT · 2021</div><div class="proj-card-title">배달공유 앱 'Youreat' UX 기획 및 개발</div><div class="proj-card-desc">배달공유 앱 기획·시장조사·유저 리서치, Figma 프로토타입, Kotlin 개발 보조</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-panel-side" onclick="slideToPanel(1)" title="AX">
-            <span class="proj-panel-side-label">AX ↑</span>
-          </div>
+    <!-- Category Tab Nav -->
+    <div class="proj-tab-nav">
+      <button class="proj-tab active" onclick="switchTab(0,this)">
+        <span class="proj-tab-icon">🎨</span>
+        <span class="proj-tab-label">UX/UI Project</span>
+      </button>
+      <button class="proj-tab" onclick="switchTab(1,this)">
+        <span class="proj-tab-icon">⚡</span>
+        <span class="proj-tab-label">AX</span>
+      </button>
+      <button class="proj-tab" onclick="switchTab(2,this)">
+        <span class="proj-tab-icon">🤝</span>
+        <span class="proj-tab-label">Human-AI/Robot</span>
+      </button>
+    </div>
+
+    <!-- Panel 0: UXUI -->
+    <div class="proj-tab-panel active" id="tab-panel-0">
+      <div class="proj-category-desc-bar">사용자 리서치 기반 서비스 기획 및 UI 설계</div>
+      <div class="proj-cards-grid">
+        <div class="proj-card" onclick="openProjModal('uxui1')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🚜</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">사업장 인터뷰·WDM 작업 분석, 원격제어 시뮬레이터 와이어프레임 개발</div></div>
         </div>
-
-        <!-- Panel 1: AX -->
-        <div class="proj-panel" data-idx="1">
-          <div class="proj-panel-side" onclick="slideToPanel(0)" title="UXUI">
-            <span class="proj-panel-side-label">UX/UI ↑</span>
-          </div>
-          <div class="proj-panel-main">
-            <div class="proj-category-box" style="background:var(--green);">
-              <div>
-                <div class="proj-category-title">AX · AI Transformation</div>
-                <div class="proj-category-desc">생성형 AI 및 AI 리터러시 중심 프로젝트</div>
-              </div>
-              <div class="proj-category-nav">
-                <button class="proj-nav-btn" onclick="slideToPanel(0)">←</button>
-                <button class="proj-nav-btn" onclick="slideToPanel(2)">→</button>
-              </div>
-            </div>
-            <div class="proj-cards-grid">
-              <div class="proj-card" onclick="openProjModal('ax1')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험·SPSS 분석 (IJHCS)</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('ax2')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">시각장애인을 위한 에이닷 포용성 개선 프로젝트</div><div class="proj-card-desc">에이닷 AI 에이전트 활용 접근성 서비스 기획, 인터뷰·IA·프로토타입 (장려상)</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('ax3')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🧠</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">주한미국대사관 · 2024</div><div class="proj-card-title">AI Tech Camp for Responsible AI</div><div class="proj-card-desc">Knowledge Graph·RAG 기반 AI 리터러시 솔루션 설계, 3박 4일 집중 캠프</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-panel-side" onclick="slideToPanel(2)" title="Human-AI">
-            <span class="proj-panel-side-label">Human-AI ↑</span>
-          </div>
+        <div class="proj-card" onclick="openProjModal('uxui2')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">⚡</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">현대 NGV 산학 · 2023</div><div class="proj-card-title">전기차 자동 충전 시나리오 및 UXUI 개발</div><div class="proj-card-desc">전기차 사용자 사용성 인터뷰, 시나리오 기반 UI 프로토타입 구현</div></div>
         </div>
-
-        <!-- Panel 2: Human-AI/Robot Interaction -->
-        <div class="proj-panel" data-idx="2">
-          <div class="proj-panel-side" onclick="slideToPanel(1)" title="AX">
-            <span class="proj-panel-side-label">AX ↑</span>
-          </div>
-          <div class="proj-panel-main">
-            <div class="proj-category-box" style="background:#2D4A78;">
-              <div>
-                <div class="proj-category-title">Human-AI/Robot Interaction</div>
-                <div class="proj-category-desc">로봇·자율주행 사용자 경험 연구</div>
-              </div>
-              <div class="proj-category-nav">
-                <button class="proj-nav-btn" onclick="slideToPanel(1)">←</button>
-                <button class="proj-nav-btn" onclick="slideToPanel(0)">→</button>
-              </div>
-            </div>
-            <div class="proj-cards-grid">
-              <div class="proj-card" onclick="openProjModal('hri1')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🚗</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">한국자동차연구원 · 2024</div><div class="proj-card-title">배달로봇 서비스 실패 상황에서의 eHMI 설계 요소 연구</div><div class="proj-card-desc">VR 환경 구현(Twinmotion), 의인화·사과 전략 효과 검증 (IJHCS)</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('hri2')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🚦</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">다중 모빌리티 실증 · 2024</div><div class="proj-card-title">자율주행 모빌리티 eHMI 설계 요소 UX 평가</div><div class="proj-card-desc">보행자 횡단 결정에 영향을 미치는 eHMI 설계 요소 분석 (IJHCI, HCII 2025)</div></div>
-              </div>
-              <div class="proj-card" onclick="openProjModal('hri3')">
-                <div class="proj-card-img"><div class="proj-card-img-placeholder">🖥️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-                <div class="proj-card-body"><div class="proj-card-tag">LG전자 산학 · 2023</div><div class="proj-card-title">인간공학 관점의 최적 모니터 검증</div><div class="proj-card-desc">대형 곡률 디스플레이 사용자 경험 연구, SPSS 통계 분석 (IEA 2024)</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-panel-side" onclick="slideToPanel(0)" title="UXUI">
-            <span class="proj-panel-side-label">UX/UI ↑</span>
-          </div>
+        <div class="proj-card" onclick="openProjModal('uxui3')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🛒</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">교내 프로젝트 · 2020</div><div class="proj-card-title">이커머스 라이브커머스 UX 전략 수립</div><div class="proj-card-desc">설문·인터뷰 기반 한정성 UX 요소의 구매 결정 영향 검증</div></div>
         </div>
-
+        <div class="proj-card" onclick="openProjModal('uxui4')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">📱</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">한이음 ICT · 2021</div><div class="proj-card-title">배달공유 앱 'Youreat' UX 기획 및 개발</div><div class="proj-card-desc">배달공유 앱 기획·시장조사·유저 리서치, Figma 프로토타입, Kotlin 개발 보조</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- Panel 1: AX -->
+    <div class="proj-tab-panel" id="tab-panel-1">
+      <div class="proj-category-desc-bar">생성형 AI 및 AI 리터러시 중심 프로젝트</div>
+      <div class="proj-cards-grid">
+        <div class="proj-card" onclick="openProjModal('ax1')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험·SPSS 분석 (IJHCS)</div></div>
+        </div>
+        <div class="proj-card" onclick="openProjModal('ax2')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">시각장애인을 위한 에이닷 포용성 개선 프로젝트</div><div class="proj-card-desc">에이닷 AI 에이전트 활용 접근성 서비스 기획, 인터뷰·IA·프로토타입 (장려상)</div></div>
+        </div>
+        <div class="proj-card" onclick="openProjModal('ax3')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🧠</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">주한미국대사관 · 2024</div><div class="proj-card-title">AI Tech Camp for Responsible AI</div><div class="proj-card-desc">Knowledge Graph·RAG 기반 AI 리터러시 솔루션 설계, 3박 4일 집중 캠프</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Human-AI -->
+    <div class="proj-tab-panel" id="tab-panel-2">
+      <div class="proj-category-desc-bar">로봇·자율주행 사용자 경험 연구</div>
+      <div class="proj-cards-grid">
+        <div class="proj-card" onclick="openProjModal('hri1')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🚗</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">한국자동차연구원 · 2024</div><div class="proj-card-title">배달로봇 서비스 실패 상황에서의 eHMI 설계 요소 연구</div><div class="proj-card-desc">VR 환경 구현(Twinmotion), 의인화·사과 전략 효과 검증 (IJHCS)</div></div>
+        </div>
+        <div class="proj-card" onclick="openProjModal('hri2')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🚦</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">다중 모빌리티 실증 · 2024</div><div class="proj-card-title">자율주행 모빌리티 eHMI 설계 요소 UX 평가</div><div class="proj-card-desc">보행자 횡단 결정에 영향을 미치는 eHMI 설계 요소 분석 (IJHCI, HCII 2025)</div></div>
+        </div>
+        <div class="proj-card" onclick="openProjModal('hri3')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🖥️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">LG전자 산학 · 2023</div><div class="proj-card-title">인간공학 관점의 최적 모니터 검증</div><div class="proj-card-desc">대형 곡률 디스플레이 사용자 경험 연구, SPSS 통계 분석 (IEA 2024)</div></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Expanded (전체 펼쳐보기) -->
-  <div class="proj-expanded" id="proj-expanded">
+  <div class="proj-expanded" id="proj-expanded" style="display:none;">
     <div class="proj-cards-grid-full reveal">
       <div class="proj-card" onclick="openProjModal('ax1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">AX · 석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험</div></div></div>
       <div class="proj-card" onclick="openProjModal('ax2')"><div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">AX · SKT & 고용노동부 · 2025</div><div class="proj-card-title">시각장애인을 위한 에이닷 포용성 개선 프로젝트</div><div class="proj-card-desc">에이닷 AI 에이전트 활용 접근성 서비스 기획 (장려상)</div></div></div>
@@ -602,10 +613,134 @@
   </div>
 </div>
 
+
+
+<!-- ═══ AWARDS & ACTIVITIES ═══ -->
+<section id="awards" style="background:var(--bg-alt);">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Awards & Activities</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- 교육 및 연구 활동 -->
+  <div class="reveal">
+    <div class="awards-subsection-title">교육 및 연구 활동</div>
+    <div class="award-list">
+
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-name">SKT 에이닷 포용성 개선 프로젝트</div>
+          <div class="award-desc">SKT & 고용노동부 주관. 시각장애인 대상 에이닷 AI 에이전트 접근성 서비스 기획 프로젝트 팀장. 앱 리뷰 크롤링·인터뷰·IA·프로토타입 수행, SKT 현직자 멘토님과 커뮤니케이션 담당. 2025 미래내일 일경험 우수사례 공모전 장려상 수상.</div>
+          <div class="award-keywords"><span class="award-kw">Service Planning</span><span class="award-kw">SKT</span><span class="award-kw">Accessibility</span><span class="award-kw">Team Lead</span></div>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-year">2024</div>
+        <div>
+          <div class="award-name">AI Tech Camp for Responsible AI</div>
+          <div class="award-desc">주한미국대사관 주관. Intel, Google 등 AI 전문가들과 함께 Responsible AI·AI 리터러시 주제로 3박 4일 집중 강의·토론·프로젝트 수행. Knowledge Graph·RAG 기반 솔루션 개발 및 발표.</div>
+          <div class="award-keywords"><span class="award-kw">미국대사관</span><span class="award-kw">Responsible AI</span><span class="award-kw">RAG</span><span class="award-kw">선발</span></div>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-year">2021</div>
+        <div>
+          <div class="award-name">한이음 ICT멘토링 – 배달공유 앱 'Youreat' 팀</div>
+          <div class="award-desc">배달공유 어플리케이션 기획·시장조사·유저 리서치 진행. MVP를 위한 기능 및 시나리오 정의, Figma 프로토타입 제작, Kotlin 로그인 페이지 프론트엔드 개발 보조.</div>
+          <div class="award-keywords"><span class="award-kw">한이음</span><span class="award-kw">ICT</span><span class="award-kw">Figma</span><span class="award-kw">Kotlin</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 동아리 -->
+  <div class="reveal" style="margin-top:2rem;">
+    <div class="awards-subsection-title">동아리</div>
+    <div class="award-list">
+
+      <div class="award-item">
+        <div class="award-year">2022</div>
+        <div>
+          <div class="award-name">UX Salon – DCAMP & DREAM 주관</div>
+          <div class="award-desc">HCI 이론과 연구 방법론 기반으로 스타트업 Hummit의 사용자 경험을 고려한 기능 고도화 팀 프로젝트 참여. 메타버스·3D 모델링 시장조사·유저 리서치, Figma 프로토타입 제작.</div>
+          <div class="award-keywords"><span class="award-kw">DCAMP</span><span class="award-kw">UX Research</span><span class="award-kw">Metaverse</span><span class="award-kw">Figma</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 봉사 -->
+  <div class="reveal" style="margin-top:2rem;">
+    <div class="awards-subsection-title">봉사</div>
+    <div class="award-list">
+
+      <div class="award-item">
+        <div class="award-year">2024</div>
+        <div>
+          <div class="award-name">CHI 2024 Student Volunteer</div>
+          <div class="award-desc">ACM – Association for Computing Machinery 주관. Honolulu, Hawaii에서 개최된 세계 최대 HCI 학회 CHI 2024 Student Volunteer로 선발·참여.</div>
+          <div class="award-keywords"><span class="award-kw">CHI 2024</span><span class="award-kw">ACM</span><span class="award-kw">HCI</span><span class="award-kw">Hawaii</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 수상 -->
+  <div class="reveal" style="margin-top:2rem;">
+    <div class="awards-subsection-title">수상</div>
+    <div class="award-list">
+
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-name">스마트시티 플랫폼 아이디어 경진대회 우수상</div>
+          <div class="award-desc">자율 파티션 로봇을 통한 스마트 오피스 공간 혁신 아이디어 기획 및 구체화.</div>
+          <div class="award-keywords"><span class="award-kw">우수상</span><span class="award-kw">Smart City</span><span class="award-kw">Service Planning</span></div>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-name">2025 미래내일 일경험 우수사례 공모전 프로젝트 부문 장려상</div>
+          <div class="award-desc">팀장으로서 시각장애인을 위한 SKT 에이닷 사진 접근성 개선 서비스 기획 프로젝트 주도. 프로젝트 결과물 완성도·팀원 역할·SKT 실무 멘토 추천을 종합 평가하여 수상.</div>
+          <div class="award-keywords"><span class="award-kw">장려상</span><span class="award-kw">Team Lead</span><span class="award-kw">SKT</span></div>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-year">2023</div>
+        <div>
+          <div class="award-name">Social Engagement Fund Best Research Team</div>
+          <div class="award-desc">팀장으로서 '지속 가능한 식량 생산을 위한 미국 수직농업 현황 조사와 소비자 인식·태도에 대한 실증적 연구' 설계 및 주도.</div>
+          <div class="award-keywords"><span class="award-kw">Best Research Team</span><span class="award-kw">Research Lead</span></div>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <div class="award-year">2021</div>
+        <div>
+          <div class="award-name">경기도재활공학서비스연구지원센터 보조기기 아이디어 공모전 입선</div>
+          <div class="award-desc">경증 치매 노인 인지 기능 향상 디지털 치료제 '일비'로 입선. 증거기반치료(EBT) 기반 디지털 치료 콘텐츠 논문 리서치, 모바일 앱 주요 기능 기획 및 와이어프레임 제작.</div>
+          <div class="award-keywords"><span class="award-kw">입선</span><span class="award-kw">Digital Therapeutics</span><span class="award-kw">Figma</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ═══ PUBLICATIONS ═══ -->
 <section id="publications">
   <div class="section-header reveal">
-    <span class="section-num">03</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Publications</h2>
     <div class="section-line"></div>
   </div>
@@ -722,100 +857,130 @@
   </div>
 </div>
 
-<!-- ═══ AWARDS & ACTIVITIES ═══ -->
-<section id="awards" style="background:var(--bg-alt);">
-  <div class="section-header reveal">
-    <span class="section-num">04</span>
-    <h2 class="section-title">Awards & Activities</h2>
-    <div class="section-line"></div>
-  </div>
+<!-- ═══ SCRIPTS ═══ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Nav scroll
+try {
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+} catch(e){}
 
-  <div class="reveal">
-    <div class="awards-subsection-title">대외 / 교내 활동</div>
-    <div class="award-list">
+// Slideshow
+const slides=document.querySelectorAll('#slideshow .slide');
+let cur=0;
+setInterval(()=>{slides[cur].classList.remove('active');cur=(cur+1)%slides.length;slides[cur].classList.add('active');},4000);
 
-      <div class="award-item">
-        <div class="award-year">2025</div>
-        <div>
-          <div class="award-name">SKT 에이닷 포용성 개선 프로젝트</div>
-          <div class="award-desc">SKT & 고용노동부 주관. 시각장애인 대상 에이닷 AI 에이전트 접근성 서비스 기획 프로젝트 팀장. 앱 리뷰 크롤링·인터뷰·IA·프로토타입 수행, SKT 현직자 멘토님과 커뮤니케이션 담당. 2025 미래내일 일경험 우수사례 공모전 <span class="hl-green">장려상 수상</span>.</div>
-          <div class="award-keywords"><span class="award-kw">Service Planning</span><span class="award-kw">SKT</span><span class="award-kw">Accessibility</span><span class="award-kw">Team Lead</span></div>
-        </div>
-      </div>
+// Reveal
+// Show all reveals immediately as fallback, then add scroll animation on top
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+// Also wire up scroll-based re-animation for a nice effect
+try {
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
+  },{threshold:0.06});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+} catch(e) {}
 
-      <div class="award-item">
-        <div class="award-year">2024</div>
-        <div>
-          <div class="award-name">CHI 2024 Student Volunteer</div>
-          <div class="award-desc">ACM – Association for Computing Machinery 주관. Honolulu, Hawaii에서 개최된 세계 최대 HCI 학회 CHI 2024 Student Volunteer로 선발·참여.</div>
-          <div class="award-keywords"><span class="award-kw">CHI 2024</span><span class="award-kw">ACM</span><span class="award-kw">HCI</span><span class="award-kw">Hawaii</span></div>
-        </div>
-      </div>
+// Experience toggle
+function toggleExp(card){card.classList.toggle('open');}
 
-      <div class="award-item">
-        <div class="award-year">2024</div>
-        <div>
-          <div class="award-name">AI Tech Camp for Responsible AI</div>
-          <div class="award-desc">주한미국대사관 주관. Intel, Google 등 AI 전문가들과 함께 Responsible AI·AI 리터러시 주제로 3박 4일 집중 강의·토론·프로젝트 수행. Knowledge Graph·RAG 기반 솔루션 개발 및 발표.</div>
-          <div class="award-keywords"><span class="award-kw">미국대사관</span><span class="award-kw">Responsible AI</span><span class="award-kw">RAG</span><span class="award-kw">선발</span></div>
-        </div>
-      </div>
+// Project view toggle
+function switchTab(idx, btn){
+  try {
+    document.querySelectorAll('.proj-tab').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.proj-tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-panel-'+idx).classList.add('active');
+  } catch(e){ console.log(e); }
+}
+function setProjView(view,btn){
+  try {
+    document.querySelectorAll('.proj-view-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const gallery = document.getElementById('proj-gallery');
+    const expanded = document.getElementById('proj-expanded');
+    if(view==='gallery'){
+      gallery.style.display='block';
+      expanded.style.display='none';
+    } else {
+      gallery.style.display='none';
+      expanded.style.display='block';
+    }
+  } catch(e){ console.log(e); }
+}
 
-      <div class="award-item">
-        <div class="award-year">2022</div>
-        <div>
-          <div class="award-name">UX Salon – DCAMP & DREAM 주관</div>
-          <div class="award-desc">HCI 이론과 연구 방법론 기반으로 스타트업 Hummit의 사용자 경험을 고려한 기능 고도화 팀 프로젝트 참여. 메타버스·3D 모델링 시장조사·유저 리서치, Figma 프로토타입 제작.</div>
-          <div class="award-keywords"><span class="award-kw">DCAMP</span><span class="award-kw">UX Research</span><span class="award-kw">Metaverse</span><span class="award-kw">Figma</span></div>
-        </div>
-      </div>
+// Project slider
+let currentPanel=0;
+function slideToPanel(idx){
+  try {
+    currentPanel=idx;
+    const track = document.getElementById('proj-track');
+    if(track) track.style.transform=`translateX(-${idx*100}%)`;
+  } catch(e){ console.log(e); }
+}
 
-      <div class="award-item">
-        <div class="award-year">2021</div>
-        <div>
-          <div class="award-name">한이음 ICT멘토링 – 배달공유 앱 'Youreat' 팀</div>
-          <div class="award-desc">배달공유 어플리케이션 기획·시장조사·유저 리서치 진행. MVP를 위한 기능 및 시나리오 정의, Figma 프로토타입 제작, Kotlin 로그인 페이지 프론트엔드 개발 보조.</div>
-          <div class="award-keywords"><span class="award-kw">한이음</span><span class="award-kw">ICT</span><span class="award-kw">Figma</span><span class="award-kw">Kotlin</span></div>
-        </div>
-      </div>
+// Project data
+const projData={
+  ax1:{tag:'AX · 석사 졸업논문',client:'2025.01 – 2025.07 · 기여도 100%',title:'생성형 AI 기반 대화형 검색 시스템의 인터페이스 설계 요소 연구',emoji:'🤖',overview:'생성형 AI를 활용한 검색에서 응답 공개 방식과 프롬프트 주도성이 탐색적 검색 경험에 미치는 영향을 연구한 석사 졸업논문.',method:['Claude API를 호출하여 사용자 평가용 AI 챗봇 직접 구현','Python 코딩과 Prompt Engineering으로 조건별(점진적/일괄 공개 × 고/저 주도성) 4가지 모드 설정','40명 피험자 대상 사용자 설문 및 행동 로그 데이터 수집, SPSS 기반 통계 분석'],result:'응답 공개 방식과 프롬프트 작성 지원에 대해 사용자에게 더 많은 통제력을 제공하는 것이 지식 변화, 검색 참여감, 탐색 행동 향상과 인지부하 감소에 유의미한 효과(p < .05).',keywords:['Python','Prompt Engineering','SPSS','User Study','Claude API','IJHCS']},
+  ax2:{tag:'AX · SKT & 고용노동부',client:'2025.08 – 2025.10 · 기여도 60% (팀장)',title:'시각장애인을 위한 에이닷 포용성 개선 프로젝트',emoji:'♿',overview:'SKT 에이닷 AI 에이전트를 활용해 시각장애인의 사진 촬영·갤러리 관리 접근성을 높이는 서비스 기획 프로젝트.',method:['앱 리뷰 크롤링 데이터 기반 페인 포인트 도출','시각장애인 3인 인터뷰를 통한 서비스 니즈 파악','사용자 여정지도·정보구조도(IA) 작성, Figma 프로토타입 제작','SKT 현직자 멘토님과 일정·작업 커뮤니케이션 담당'],result:'2025 미래내일 일경험 우수사례 공모전 프로젝트 부문 장려상 수상.',keywords:['Jira','Figma','User Interview','IA','Service Planning','장려상']},
+  ax3:{tag:'AX · 주한미국대사관',client:'2024.10 – 2024.11 · 3박 4일 · 기여도 30%',title:'AI Tech Camp for Responsible AI',emoji:'🧠',overview:'주한미국대사관 주관 AI 캠프. An Online Guide for Verifying AI-Generated Content for Non-Expert Users 주제로 솔루션 설계 및 발표.',method:['AI 리터러시 문제 정의 및 구체화, 시스템 설계 보조','RAG 방식과 Knowledge Graph 기반 추론을 결합해 AI 응답 투명성 향상 솔루션 설계','AI 엔지니어·개발자·마케터 등 다양한 직군과 협업'],result:'3박 4일 intensive course 수료. 해당 경험을 토대로 졸업 연구 기획 및 실험용 LLM 챗봇 직접 구현.',keywords:['Responsible AI','RAG','Knowledge Graph','Communication','선발']},
+  uxui1:{tag:'UXUI · HD현대 산학과제',client:'2024.04 – 2024.12 · 기여도 30%',title:'굴착기/휠로더 원격제어 사용 환경을 고려한 UI/UX 선행연구',emoji:'🚜',overview:'원격제어 중장비 인터페이스 연구·리서치 수행 후 와이어프레임 및 UI 컨셉안 개발.',method:['국내외 중장비 인터페이스 기능 조사, 화면 맵·IA(정보구조도) 작성','사업장 방문 사용자 인터뷰 및 WDM(Work Domain Model) 작업 분석, 사용자 여정지도 작성','Tobii Pro Eye Tracker 활용, RC 중장비 원격 작업 환경 구현 후 사용자 워크샵 co-design','Figma로 작업자·관리자용 원격제어 시뮬레이터 와이어프레임 및 UI 컨셉안 개발'],result:'세부 작업별 비원격 시나리오 구축, 비원격/원격 워크샵 수행 후 eye-tracking 데이터·여정지도·인터뷰 데이터 정리, 시뮬레이터 와이어프레임 개발.',keywords:['Figma','Tobii Eye Tracker','WDM','Wireframe','Co-design','User Interview']},
+  uxui2:{tag:'UXUI · 현대 NGV 산학과제',client:'2023.08 – 2023.10',title:'전기차 자동 충전 시나리오 및 UXUI 개발',emoji:'⚡',overview:'전기차 자동 충전 시나리오 기반 UXUI 개발. Figma를 활용하여 충전 어플리케이션 인터페이스 제작.',method:['전기차 사용자 대상 어플리케이션 사용성 인터뷰 수행','기존·신규 사용자의 정보 활용 요구 및 앱 활용 방식 차이 분석','사용 시나리오 기반 UI 프로토타입 구현'],result:'기존 사용자와 신규 사용자의 정보 활용 요구 및 어플리케이션 활용 방식의 차이를 제언, 사용 시나리오 기반 UI 프로토타입 구현.',keywords:['Figma','Usability Interview','Scenario','Prototype']},
+  uxui3:{tag:'UXUI · 교내 프로젝트',client:'2020.09 – 2020.12',title:'이커머스 라이브커머스 UX 전략 수립',emoji:'🛒',overview:"이커머스 앱 '티몬'의 라이브커머스 기능을 위한 시장조사, 유저리서치 및 UX 전략 수립.",method:['타 기업 라이브커머스 기능 비교 후 구매 결정 영향 가설 수립','설문조사 및 인터뷰 진행하여 가설 검증 (p < .05)','UX 전략 수립 및 결과 발표'],result:"'품절 임박', '구매 가능 시간 임박' 등 즉각적으로 변화를 느낄 수 있는 한정성 UX 요소가 구매 결정에 유의미한 영향을 미침을 제언.",keywords:['Survey','Interview','Statistical Analysis','UX Strategy']},
+  uxui4:{tag:'UXUI · 한이음 ICT멘토링',client:'2021.03 – 2021.12',title:"배달공유 앱 'Youreat' UX 기획 및 개발",emoji:'📱',overview:'배달공유 어플리케이션 기획 및 시장조사, 유저 리서치 진행.',method:['MVP 구현을 위해 기능 및 사용자 사용 시나리오 정의','Figma를 활용하여 프로토타입 제작','Kotlin을 활용하여 로그인 페이지 프론트엔드 프로그래밍 보조'],result:'서비스 기획부터 프로토타입, 개발 보조까지 전 과정 경험.',keywords:['Figma','Kotlin','User Research','Prototyping']},
+  hri1:{tag:'HRI · 한국자동차연구원 과제',client:'2024.10 – 2025.01 · 기여도 80%',title:'배달로봇의 서비스 실패 상황에서 eHMI 설계 요소에 따른 사용자 평가 연구',emoji:'🚗',overview:'배달로봇의 음식 배달 지연 시나리오에서 의인화 수준과 사과 전략이 사용자 신뢰·사용의도·태도에 미치는 영향 연구.',method:['배달로봇 서비스 실패(음식 배달 지연) 상황을 Twinmotion 소프트웨어로 VR 환경 구현','배달로봇의 의인화 수준(고,저) × 사과 전략(단순 사과, 공감하는 사과, 설명하는 사과) 조건 설정','40명 피험자 대상 사용자 평가 수행, SPSS 기반 통계 분석'],result:'전반적으로 의인화 수준이 높은 사과 전략이 신뢰·사용의도 향상에 긍정적. 공감 전략의 효과성은 피험자 특성에 따라 상이. 배달로봇 멘탈모델이 유의미한 공변량으로 작용 (p < .05). IJHCS 게재.',keywords:['Twinmotion','VR','SPSS','User Study','HRI','IJHCS']},
+  hri2:{tag:'HRI · 다중 모빌리티 통합 관제',client:'2024 · 한국자동차연구원',title:'자율주행 모빌리티의 eHMI 설계 요소에 대한 UX 평가 연구',emoji:'🚦',overview:'자율주행 차량의 제동 행동과 키네마틱 eHMI가 보행자 횡단 결정에 미치는 영향 연구.',method:['자율주행 차량의 제동 행동 및 eHMI 설계 요소 조작','보행자 대상 실험 설계 및 수행','통계 분석 및 결과 도출'],result:'IJHCI 게재 및 HCII 2025 학회 발표.',keywords:['eHMI','Autonomous Vehicle','Pedestrian','IJHCI','HCII 2025']},
+  hri3:{tag:'HRI · LG전자 산학과제',client:'2023.10 – 2023.12',title:'인간공학 관점의 최적 모니터 검증',emoji:'🖥️',overview:'의뢰 받은 조건에 따라 대형 곡률 디스플레이의 사용자 경험 연구 및 리서치 진행.',method:['자극물 구현, 과업 설계, 실험 진행','SPSS 기반 통계 분석 및 결론 도출','과업별 실험 설계 및 실험 환경 구현, 사용자 평가 실험 수행'],result:'데이터 정리 및 결과 분석 후 인간공학적 측면에서 최적의 모니터 조건에 대한 결론 도출. IEA 2024 학회 논문 발표.',keywords:['Ergonomics','SPSS','Experiment Design','Large Display','IEA 2024']}
+};
 
-    </div>
-  </div>
+function openProjModal(id){
+  const d=projData[id];if(!d)return;
+  let html=`<div class="proj-modal-tag">${d.tag}</div>
+  <div style="font-size:3rem;margin-bottom:1rem;">${d.emoji}</div>
+  <div class="proj-modal-title">${d.title}</div>
+  <div class="proj-modal-client">${d.client}</div>
+  <div class="proj-modal-section-title">개요</div>
+  <div class="proj-modal-body">${d.overview}</div>
+  <div class="proj-modal-section-title">연구 / 수행 방법</div>
+  <div class="proj-modal-body"><ul>${d.method.map(m=>`<li>${m}</li>`).join('')}</ul></div>
+  <div class="proj-modal-section-title">결과 및 성과</div>
+  <div class="proj-modal-body">${d.result}</div>
+  <div class="proj-modal-tags">${d.keywords.map(k=>`<span class="proj-modal-keyword">${k}</span>`).join('')}</div>`;
+  document.getElementById('proj-modal-content').innerHTML=html;
+  document.getElementById('proj-modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeProjModal(e){if(e.target===document.getElementById('proj-modal-overlay'))closeProjModalBtn();}
+function closeProjModalBtn(){document.getElementById('proj-modal-overlay').classList.remove('open');document.body.style.overflow='';}
 
-  <div class="reveal" style="margin-top:2rem;">
-    <div class="awards-subsection-title">수상</div>
-    <div class="award-list">
+// Publication data
+const pubData={
+  pub1:{journal:'International Journal of Human-Computer Studies (IJHCS) · Q1, SSCI·SCIE',title:'Exploratory Search with Generative AI: An Empirical Study on the Impact of Interaction Design Strategies on Information Exploration and Cognitive Load',authors:'<b>Nakyung Kim</b>, Yong Gu Ji',year:'2026',overview:'생성형 AI를 활용한 검색에서 사용자 입력 주도성과 시스템 응답 출력 설계 요소가 사용자의 탐색적 검색 경험에 미치는 영향 연구.',method:['Claude API를 호출하여 사용자 평가용 AI 챗봇 구현, Python 코딩과 Prompt Engineering을 통해 조건별 설계 수준 통제','40명의 사용자 설문 및 로그 데이터를 수집하여 SPSS 기반 통계 분석'],result:'응답 공개 방식과 프롬프트 작성 지원에 대해 사용자에게 더 많은 통제력을 제공하는 것이 지식 변화, 검색 참여감, 탐색 행동 향상과 인지부하 감소에 유의미한 효과를 보임 (p < .05).',pdf:'your-paper-1.pdf',doi:'#',keywords:['Generative AI','Exploratory Search','Cognitive Load','Prompt Engineering','Information Retrieval']},
+  pub2:{journal:'International Journal of Human-Computer Studies (IJHCS) · Q1, SSCI·SCIE',title:'Service recovery in robotic deliveries: Effects of apology strategy and anthropomorphism under delays of food delivery',authors:'Suryeon Kim, <b>Nakyung Kim</b>, Yong Gu Ji',year:'2026',overview:'배달로봇의 서비스 실패 상황(음식 배달 지연)에서 의인화 수준과 사과 전략이 사용자의 신뢰·사용의도·태도에 미치는 영향 연구.',method:['Twinmotion으로 VR 환경 구현, 의인화 수준(고,저) × 사과 전략(3가지) 조건 설계','40명 피험자 대상 실험 및 SPSS 통계 분석'],result:'전반적으로 의인화 수준이 높은 사과 전략이 긍정적 효과. 공감 전략의 효과성은 피험자 특성에 따라 상이. 배달로봇 멘탈모델이 유의미한 공변량으로 작용 (p < .05).',pdf:'your-paper-2.pdf',doi:'#',keywords:['Delivery Robot','Service Recovery','Anthropomorphism','Apology Strategy','HRI']},
+  pub3:{journal:'International Journal of Human-Computer Interaction (IJHCI) · Q1, SCIE',title:'Effects of Autonomous Vehicle Braking Behavior and Kinematic eHMI on Pedestrian Crossing Decisions',authors:'Jongwoo Park, Suhwan Jung, <b>Nakyung Kim</b>, Taewung Kim, Yong Gu Ji',year:'2025',overview:'자율주행 차량의 제동 행동과 키네마틱 eHMI가 보행자의 횡단 결정에 미치는 영향을 분석한 연구.',method:['자율주행 차량의 제동 행동 및 eHMI 설계 요소 조작','보행자 대상 실험 설계 및 수행, 통계 분석'],result:'IJHCI 게재 및 HCII 2025 학회 발표로 이어짐.',pdf:'your-paper-3.pdf',doi:'#',keywords:['Autonomous Vehicle','eHMI','Pedestrian','Crossing Decision','Braking Behavior']},
+  conf1:{journal:'HCI International 2025 Conference (HCII 2025)',title:"I'm Going to Stop, Will You Cross?: The Impact of Vehicle's eHMI on Pedestrian's Decision-Making",authors:"Jongwoo Park, <b>Nakyung Kim</b>, Sujeong Park, Gyuhee Park, Suhwan Jung, Yong Gu Ji",year:'2025',overview:'자율주행 차량의 eHMI가 보행자 횡단 결정에 미치는 영향을 분석한 학회 발표 논문.',method:['eHMI 설계 요소 조작 및 보행자 대상 실험','통계 분석 및 결과 도출'],result:'HCI International 2025 Conference 발표.',pdf:'your-conf-1.pdf',doi:'',keywords:['eHMI','Pedestrian Safety','Autonomous Vehicle','Decision Making']},
+  conf2:{journal:'22nd Triennial Congress of International Ergonomics Association (IEA 2024)',title:'A Study on the Impact of Screen Curvature and Control-Display Gain on Pointing Performance in Large Displays',authors:'<b>Nakyung Kim</b>, Suryeon Kim, Young Woo Kim, Yong Gu Ji',year:'2024',overview:'대형 곡률 디스플레이에서 화면 곡률과 Control-Display 이득이 포인팅 수행에 미치는 영향 연구.',method:['과업별 실험 설계 및 실험 환경 구현','사용자 평가 실험 수행, SPSS 통계 분석'],result:'인간공학적 최적 모니터 조건 도출. IEA 2024 학회 발표.',pdf:'your-conf-2.pdf',doi:'',keywords:['Large Display','Screen Curvature','Pointing Performance','Ergonomics']}
+};
 
-      <div class="award-item">
-        <div class="award-year">2025</div>
-        <div>
-          <div class="award-name">2025 미래내일 일경험 우수사례 공모전 프로젝트 부문 장려상</div>
-          <div class="award-desc">팀장으로서 시각장애인을 위한 SKT 에이닷 사진 접근성 개선 서비스 기획 프로젝트 주도. 프로젝트 결과물 완성도·팀원 역할·SKT 실무 멘토 추천을 종합 평가하여 수상.</div>
-          <div class="award-keywords"><span class="award-kw">장려상</span><span class="award-kw">Team Lead</span><span class="award-kw">SKT</span></div>
-        </div>
-      </div>
+function openPubModal(id){
+  const d=pubData[id];if(!d)return;
+  let html=`<div class="pub-modal-journal">${d.journal}</div>
+  <div class="pub-modal-title">${d.title}</div>
+  <div class="pub-modal-authors">${d.authors} · ${d.year}</div>
+  <div class="pub-modal-section"><div class="pub-modal-section-title">연구 개요</div><div class="pub-modal-text">${d.overview}</div></div>
+  <div class="pub-modal-section"><div class="pub-modal-section-title">연구 방법</div><div class="pub-modal-text"><ul>${d.method.map(m=>`<li>${m}</li>`).join('')}</ul></div></div>
+  <div class="pub-modal-section"><div class="pub-modal-section-title">결과 및 기여</div><div class="pub-modal-text">${d.result}</div></div>
+  <div class="pub-modal-keywords">${d.keywords.map(k=>`<span class="pub-modal-kw">${k}</span>`).join('')}</div>
+  <div class="pub-modal-actions">
+    <a href="${d.pdf}" download class="pub-btn pub-btn-pdf"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>PDF 다운로드</a>
+    ${d.doi?`<a href="${d.doi}" target="_blank" class="pub-btn pub-btn-doi">DOI 바로가기</a>`:''}
+  </div>`;
+  document.getElementById('pub-modal-content').innerHTML=html;
+  document.getElementById('pub-modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePubModal(e){if(e.target===document.getElementById('pub-modal-overlay'))closePubModalBtn();}
 
-      <div class="award-item">
-        <div class="award-year">2023</div>
-        <div>
-          <div class="award-name">Social Engagement Fund Best Research Team</div>
-          <div class="award-desc">팀장으로서 '지속 가능한 식량 생산을 위한 미국 수직농업 현황 조사와 소비자 인식·태도에 대한 실증적 연구' 설계 및 주도.</div>
-          <div class="award-keywords"><span class="award-kw">Best Team</span><span class="award-kw">Research Lead</span></div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2021</div>
-        <div>
-          <div class="award-name">경기도재활공학서비스연구지원센터 보조기기 아이디어 공모전 입선</div>
-          <div class="award-desc">경증 치매 노인 인지 기능 향상 디지털 치료제 '일비'로 입선. 증거기반치료(EBT) 기반 디지털 치료 콘텐츠 논문 리서치, 모바일 앱 주요 기능 기획 및 와이어프레임 제작.</div>
-          <div class="award-keywords"><span class="award-kw">입선</span><span class="award-kw">Digital Therapeutics</span><span class="award-kw">Figma</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <footer>
   <span>© 2026 김나경</span>
@@ -825,8 +990,10 @@
 <!-- ═══ SCRIPTS ═══ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll
-const navbar=document.getElementById('navbar');
-window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+try {
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+} catch(e){}
 
 // Slideshow
 const slides=document.querySelectorAll('#slideshow .slide');
@@ -834,27 +1001,52 @@ let cur=0;
 setInterval(()=>{slides[cur].classList.remove('active');cur=(cur+1)%slides.length;slides[cur].classList.add('active');},4000);
 
 // Reveal
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
-},{threshold:0.06});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// Show all reveals immediately as fallback, then add scroll animation on top
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+// Also wire up scroll-based re-animation for a nice effect
+try {
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});
+  },{threshold:0.06});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+} catch(e) {}
 
 // Experience toggle
 function toggleExp(card){card.classList.toggle('open');}
 
 // Project view toggle
+function switchTab(idx, btn){
+  try {
+    document.querySelectorAll('.proj-tab').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.proj-tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-panel-'+idx).classList.add('active');
+  } catch(e){ console.log(e); }
+}
 function setProjView(view,btn){
-  document.querySelectorAll('.proj-view-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('proj-gallery').classList.toggle('active',view==='gallery');
-  document.getElementById('proj-expanded').classList.toggle('active',view==='expanded');
+  try {
+    document.querySelectorAll('.proj-view-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const gallery = document.getElementById('proj-gallery');
+    const expanded = document.getElementById('proj-expanded');
+    if(view==='gallery'){
+      gallery.style.display='block';
+      expanded.style.display='none';
+    } else {
+      gallery.style.display='none';
+      expanded.style.display='block';
+    }
+  } catch(e){ console.log(e); }
 }
 
 // Project slider
 let currentPanel=0;
 function slideToPanel(idx){
-  currentPanel=idx;
-  document.getElementById('proj-track').style.transform=`translateX(-${idx*100}%)`;
+  try {
+    currentPanel=idx;
+    const track = document.getElementById('proj-track');
+    if(track) track.style.transform=`translateX(-${idx*100}%)`;
+  } catch(e){ console.log(e); }
 }
 
 // Project data

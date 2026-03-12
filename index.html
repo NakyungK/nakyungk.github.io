@@ -23,7 +23,7 @@
       --line:#D8DCE8;
       --font:'Inter','Noto Sans KR',sans-serif;
     }
-    html{scroll-behavior:smooth;}
+    html{scroll-behavior:smooth; scroll-padding-top: 70px;} /* 클릭 시 상단 메뉴바에 가려지지 않도록 여백 추가 */
     body{background:var(--bg);color:var(--ink);font-family:var(--font);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
     ::-webkit-scrollbar{width:4px;}
     ::-webkit-scrollbar-thumb{background:var(--line);}
@@ -47,11 +47,6 @@
     /* Left panel */
     .hero-left{background:var(--navy);display:flex;flex-direction:column;align-items:center;padding:2.5rem 2rem;position:sticky;top:0;height:100vh;overflow-y:auto;justify-content:center;min-width:280px;}
     .photo-slideshow{width:130px;height:130px;border-radius:50%;position:relative;overflow:hidden;border:3px solid rgba(45,125,90,0.5);margin-bottom:1.1rem;flex-shrink:0;}
-    .photo-slideshow .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0;transition:opacity 0.8s;}
-    .photo-slideshow .slide.active{opacity:1;}
-    .slide-1{background:linear-gradient(135deg,#1B2A4A,#2E4070);}
-    .slide-2{background:linear-gradient(135deg,#142038,#253560);}
-    .slide-3{background:linear-gradient(135deg,#1e3050,#2D7D5A);}
     .profile-name{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:0.15rem;text-align:center;}
     .profile-name-en{font-size:0.72rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.2rem;}
     .profile-role{font-size:0.72rem;color:var(--green-mid);letter-spacing:0.08em;margin-bottom:1.3rem;text-align:center;}
@@ -79,14 +74,7 @@
     .hero-name em{font-style:normal;color:var(--green);}
     .hero-desc{font-size:0.88rem;color:var(--ink-mid);line-height:1.8;margin-bottom:1.3rem;}
     .hero-ctas{display:flex;gap:0.6rem;flex-wrap:wrap;}
-    .hero-cta{font-size:0.8rem;font-weight:600;letter-spacing:0.04em;padding:0.65rem 1.4rem;text-decoration:none;border-radius:5px;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.4rem;border:2px solid transparent;}
-    .hero-cta.primary{background:var(--navy);color:#fff;border-color:var(--navy);}
-    .hero-cta.primary:hover{background:#fff;color:var(--navy);}
-    .hero-cta.secondary{background:#fff;color:var(--green);border-color:var(--green);}
-    .hero-cta.secondary:hover{background:var(--green);color:#fff;}
-    .hero-cta.ghost{background:#fff;color:var(--navy);border-color:var(--navy);}
-    .hero-cta.ghost:hover{background:var(--navy);color:#fff;}
-
+    
     /* Stats */
     .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
     .stat-card{background:#fff;padding:1rem 1.2rem;cursor:pointer;transition:all 0.2s;text-decoration:none;display:block;color:inherit;}
@@ -96,14 +84,12 @@
     .stat-sub{font-size:0.67rem;color:var(--ink-muted);display:block;margin-top:0.1rem;}
 
     /* About + Education inline */
-    
     .about-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.5rem;}
     .about-label::before{content:'';width:14px;height:2px;background:var(--green);display:block;}
     .about-text{font-size:0.86rem;color:var(--ink-mid);line-height:1.8;}
     .about-text p+p{margin-top:0.7rem;}
 
     /* Education compact */
-    .edu-compact{}
     .edu-item-c{display:flex;gap:0.9rem;align-items:flex-start;padding:0.8rem 0;border-bottom:1px solid var(--line);}
     .edu-item-c:last-child{border-bottom:none;}
     .edu-symbol{width:36px;height:36px;flex-shrink:0;border-radius:6px;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--navy);}
@@ -147,32 +133,6 @@
     .proj-view-toggle{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
     .proj-view-btn{font-size:0.78rem;font-weight:500;padding:0.5rem 1rem;background:#fff;border:none;cursor:pointer;color:var(--ink-muted);transition:all 0.2s;}
     .proj-view-btn.active{background:var(--navy);color:#fff;}
-
-    /* Category slider */
-    .proj-slider{position:relative;overflow:hidden;}
-    .proj-slider-track{display:flex;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);}
-    .proj-panel{min-width:100%;display:flex;gap:1.5rem;}
-    .proj-panel-side{
-  width:72px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  cursor:pointer;padding:0.8rem 0.4rem;
-  border-radius:10px;
-  background:rgba(27,42,74,0.06);
-  border:1px solid var(--line);
-  transition:all 0.2s;
-  user-select:none;
-}
-.proj-panel-side:hover{background:var(--navy);border-color:var(--navy);}
-.proj-panel-side:hover .proj-panel-side-label{color:#fff;}
-    .proj-panel-side-label{writing-mode:horizontal-tb;font-size:0.7rem;font-weight:600;color:var(--ink-muted);letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;text-align:center;line-height:1.4;}
-    .proj-panel-side:hover .proj-panel-side-label{color:var(--navy);}
-    .proj-panel-main{flex:1;display:flex;flex-direction:column;}
-
-    .proj-category-box{background:var(--navy);border-radius:6px 6px 0 0;padding:0.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;}
-    .proj-category-title{font-size:0.78rem;font-weight:700;color:#fff;letter-spacing:0.08em;text-transform:uppercase;}
-    .proj-category-desc{font-size:0.72rem;color:rgba(255,255,255,0.6);}
-    .proj-category-nav{display:flex;gap:0.4rem;}
-    .proj-nav-btn{background:rgba(255,255,255,0.15);border:none;color:#fff;width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
-    .proj-nav-btn:hover{background:rgba(255,255,255,0.3);}
 
     .proj-cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:1.2rem;background:transparent;border:none;padding-top:0;justify-content:center;}
 
@@ -324,16 +284,25 @@
 </head>
 <body>
 
+<nav id="navbar">
+  <a href="#" class="nav-logo">김나경</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#publications">Publications</a></li>
+  </ul>
+</nav>
 
-<!-- ═══ HERO ═══ -->
 <div id="hero">
   <div class="hero-left">
-    <div class="photo-slideshow" id="slideshow">
-      <img src="profile.jpg" alt="프로필 사진" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="photo-slideshow">
+      <img src="image/profile.jpg" alt="프로필 사진" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
     <div class="profile-name">김나경</div>
     <div class="profile-name-en">Kim Nakyung</div>
     <div class="profile-role">UX Researcher · Planner</div>
+    
     <div class="profile-links">
       <a href="https://www.linkedin.com/in/nakyungkim12" target="_blank" class="profile-link" title="LinkedIn">
         <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -341,15 +310,13 @@
       <a href="https://scholar.google.com/" target="_blank" class="profile-link" title="Google Scholar">
         <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 10a8 8 0 017.162 3.44L24 9.5z"/></svg>
       </a>
-      <a href="/cdn-cgi/l/email-protection#f19f909a88849f96c0c3c0c1b1969c90989ddf929e9c" class="profile-link" title="Email">
+      <a href="mailto:이메일을입력하세요@gmail.com" class="profile-link" title="Email">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       </a>
-      <a href="김나경.pdf" download class="profile-link" title="CV">
-        <span style="font-size:0.62rem;font-weight:700;">CV</span>
-      </a>
     </div>
+    
     <div class="profile-divider"></div>
-    <div class="profile-bio"> 심리학 · 산업공학 배경으로<br/>사람과 기술을 연결하는 서비스를 설계합니다.<br/><span style="color:rgba(255,255,255,0.35);font-size:0.74rem;margin-top:0.3rem;display:block;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c222d273539222b7d7e7d7c0c2b212d2520622f2321">[email&#160;protected]</a></span></div>
+    <div class="profile-bio">심리학과 산업공학 배경으로<br/>사람과 기술을 연결하는 서비스를 설계합니다.</div>
     <div class="profile-tags">
       <span class="profile-tag">User Research</span>
       <span class="profile-tag">Service Planning</span>
@@ -362,11 +329,11 @@
 
   <div class="hero-right">
 
-  <div class="hero-intro-full" style="margin-bottom: 3.5rem; padding-top: 1rem;">
+  <div class="hero-intro-full" style="padding-top: 1rem;">
     <div class="hero-eyebrow">UX Researcher & Planner</div>
-    <h1 class="hero-name" style="font-size: 1.8rem; margin-bottom: 1.5rem;">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
-    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 1.5rem;">심리학과 산업공학,ㄹ 배경으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. <br> 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.</p>
-    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9;">특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
+    <h1 class="hero-name" style="font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 2rem; line-height: 1.8;">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
+    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 1.5rem;">심리학과 산업공학 배경으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. <br> 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.</p>
+    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 3.5rem;">특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 3rem; align-items: start;">
@@ -399,9 +366,9 @@
           </div>
           <div class="edu-content">
             <div class="edu-school" style="font-size: 0.95rem;">연세대학교 석사</div>
-            <div class="edu-dept" style="font-size: 0.85rem;">산업공학과 · 상호작용설계연구실 · 스마트시 심화트랙</div>
+            <div class="edu-dept" style="font-size: 0.85rem;">산업공학과 · 상호작용설계연구실 · 스마트시티 심화트랙</div>
             <div class="edu-detail-c" style="font-size: 0.78rem;">지도교수: 지용구 교수님<br/>2023.09 – 2025.08</div>
-             <div class="edu-detail-c" style="font-size: 0.78rem;">학위논문: 생성형 AI의 응답 공개 방식과 프롬프트 작성 주도성이 탐색적 검색 경험에 미치는 영향<br/>2023.09 – 2025.08</div>
+             <div class="edu-detail-c" style="font-size: 0.78rem;">학위논문: 생성형 AI의 응답 공개 방식과 프롬프트 작성 주도성이 탐색적 검색 경험에 미치는 영향</div>
             <span class="edu-gpa-c" style="margin-top: 0.5rem;">GPA 4.1 / 4.3</span>
           </div>
         </div>
@@ -422,8 +389,8 @@
   </div>
 
 </div>
+</div>
 
-<!-- ═══ EXPERIENCE ═══ -->
 <section id="experience">
   <div class="section-header reveal">
     <span class="section-num">01</span>
@@ -497,7 +464,6 @@
   </div>
 </section>
 
-<!-- ═══ PROJECTS ═══ -->
 <section id="projects" style="background:var(--bg-alt);">
   <div class="section-header reveal">
     <span class="section-num">02</span>
@@ -511,10 +477,8 @@
     </div>
   </div>
 
-  <!-- Gallery (카테고리별) -->
   <div class="proj-gallery active" id="proj-gallery">
 
-    <!-- Category Tab Nav -->
     <div class="proj-tab-nav">
       <button class="proj-tab active" onclick="switchTab(0,this)">
         <span class="proj-tab-icon">🎨</span>
@@ -530,7 +494,6 @@
       </button>
     </div>
 
-    <!-- Panel 0: UXUI -->
     <div class="proj-tab-panel active" id="tab-panel-0">
       <div class="proj-category-desc-bar">사용자 리서치 기반 서비스 기획 및 UI 설계</div>
       <div class="proj-cards-grid">
@@ -553,7 +516,6 @@
       </div>
     </div>
 
-    <!-- Panel 1: AX -->
     <div class="proj-tab-panel" id="tab-panel-1">
       <div class="proj-category-desc-bar">생성형 AI 및 AI 리터러시 중심 프로젝트</div>
       <div class="proj-cards-grid">
@@ -572,7 +534,6 @@
       </div>
     </div>
 
-    <!-- Panel 2: Human-AI -->
     <div class="proj-tab-panel" id="tab-panel-2">
       <div class="proj-category-desc-bar">로봇·자율주행 사용자 경험 연구</div>
       <div class="proj-cards-grid">
@@ -593,7 +554,6 @@
 
   </div>
 
-  <!-- Expanded (전체 펼쳐보기) -->
   <div class="proj-expanded" id="proj-expanded">
     <div class="proj-cards-grid-full reveal">
       <div class="proj-card" onclick="openProjModal('ax1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">AX · 석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험</div></div></div>
@@ -608,7 +568,6 @@
   </div>
 </section>
 
-<!-- Project Modal -->
 <div class="proj-modal-overlay" id="proj-modal-overlay" onclick="closeProjModal(event)">
   <div class="proj-modal" id="proj-modal">
     <button class="proj-modal-close" onclick="closeProjModalBtn()">✕</button>
@@ -618,7 +577,6 @@
 
 
 
-<!-- ═══ AWARDS & ACTIVITIES ═══ -->
 <section id="awards" style="background:var(--bg-alt);">
   <div class="section-header reveal">
     <span class="section-num">03</span>
@@ -626,7 +584,6 @@
     <div class="section-line"></div>
   </div>
 
-  <!-- 교육 및 연구 활동 -->
   <div class="reveal">
     <div class="awards-subsection-title">교육 및 연구 활동</div>
     <div class="award-list">
@@ -661,7 +618,6 @@
     </div>
   </div>
 
-  <!-- 동아리 -->
   <div class="reveal" style="margin-top:2rem;">
     <div class="awards-subsection-title">동아리</div>
     <div class="award-list">
@@ -678,7 +634,6 @@
     </div>
   </div>
 
-  <!-- 봉사 -->
   <div class="reveal" style="margin-top:2rem;">
     <div class="awards-subsection-title">봉사</div>
     <div class="award-list">
@@ -695,7 +650,6 @@
     </div>
   </div>
 
-  <!-- 수상 -->
   <div class="reveal" style="margin-top:2rem;">
     <div class="awards-subsection-title">수상</div>
     <div class="award-list">
@@ -740,7 +694,6 @@
   </div>
 </section>
 
-<!-- ═══ PUBLICATIONS ═══ -->
 <section id="publications">
   <div class="section-header reveal">
     <span class="section-num">04</span>
@@ -852,7 +805,6 @@
   </div>
 </section>
 
-<!-- Pub Modal -->
 <div class="pub-modal-overlay" id="pub-modal-overlay" onclick="closePubModal(event)">
   <div class="pub-modal" id="pub-modal">
     <button class="pub-modal-close" onclick="closePubModalBtn()">✕</button>
@@ -866,13 +818,7 @@
   <span>UX Researcher</span>
 </footer>
 
-<!-- ═══ SCRIPTS ═══ -->
 <script>
-// Slideshow
-const slides=document.querySelectorAll('#slideshow .slide');
-let cur=0;
-setInterval(()=>{slides[cur].classList.remove('active');cur=(cur+1)%slides.length;slides[cur].classList.add('active');},4000);
-
 // Reveal
 document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
 try{

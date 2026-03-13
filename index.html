@@ -362,7 +362,7 @@
       <div class="hero-edu-grid" style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
         <div class="edu-item-c" style="border-bottom: none; padding: 0;">
           <div class="edu-symbol">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
+            <img src="images/YSD.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
           </div>
           <div class="edu-content">
             <div class="edu-school" style="font-size: 0.95rem;">연세대학교 석사</div>
@@ -374,7 +374,7 @@
         </div>
         <div class="edu-item-c" style="border-bottom: none; padding: 0;">
           <div class="edu-symbol">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Yonsei_University_Emblem.svg/120px-Yonsei_University_Emblem.svg.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
+            <img src="images/YSD.png" alt="연세대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='연세'"/>
           </div>
           <div class="edu-content">
             <div class="edu-school" style="font-size: 0.95rem;">연세대학교 학사</div>
@@ -402,7 +402,7 @@
     <details class="exp-card">
       <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
         <div class="exp-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Naver_Corporation_Logo.svg/200px-Naver_Corporation_Logo.svg.png" alt="Naver" onerror="this.parentElement.innerHTML='NAVER'"/>
+          <img src="images/NAVERCLOUD.png" alt="Naver Cloud" onerror="this.parentElement.innerHTML='NAVER'"/>
         </div>
         <div class="exp-header-text">
           <div class="exp-role-title">Hyperscale AI 기반 기획 및 리서치 인턴</div>
@@ -423,7 +423,8 @@
 
     <details class="exp-card">
       <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
-        <div class="exp-logo" style="font-size:0.62rem;font-weight:700;color:var(--navy);text-align:center;line-height:1.3;">경상<br/>국립대</div>
+        <div class="exp-logo">
+          <img src="images/GNU.jpg" alt="경상국립대" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='경상<br/>국립대'"/>
         <div class="exp-header-text">
           <div class="exp-role-title">석사후 연구원</div>
           <div class="exp-company-name">경상국립대학교 · Human Interaction & Experience Lab</div>
@@ -443,7 +444,8 @@
 
     <details class="exp-card">
       <summary class="exp-card-header" style="list-style:none;cursor:pointer;">
-        <div class="exp-logo" style="font-size:0.62rem;font-weight:700;color:var(--navy);text-align:center;line-height:1.3;">THE<br/>MIL</div>
+        <div class="exp-logo">
+          <img src="images/TMP.png" alt="The Millennium Project" style="width:100%;height:100%;object-fit:contain;padding:4px;" onerror="this.parentElement.innerHTML='THE<br/>MIL'"/>
         <div class="exp-header-text">
           <div class="exp-role-title">Research and Design Intern</div>
           <div class="exp-company-name">The Millennium Project · Washington DC, US</div>
@@ -518,18 +520,22 @@
 
     <!-- Human-AI -->
     <div class="proj-tab-panel" id="tab-panel-1">
-      <div class="proj-category-desc-bar">생성형 AI 및 AI 리터러시 중심 연구</div>
+      <div class="proj-category-desc-bar">생성형 AI, 지식그래프, AI 리터러시 중심 연구</div>
       <div class="proj-cards-grid">
         <div class="proj-card" onclick="openProjModal('ax1')">
           <div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
           <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험·SPSS 분석 (IJHCS)</div></div>
+        </div>
+        <div class="proj-card" onclick="openProjModal('ax4')">
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">🕸️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">Naver Cloud · 2026</div><div class="proj-card-title">온톨로지 기반 지식그래프 리서치 및 구현</div><div class="proj-card-desc">시맨틱 레이어 서비스 기획 보조, Graph RAG·경쟁사 분석·AX 마켓 리서치 및 발표</div></div>
         </div>
         <div class="proj-card" onclick="openProjModal('ax2')">
           <div class="proj-card-img"><div class="proj-card-img-placeholder">🧠</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
           <div class="proj-card-body"><div class="proj-card-tag">주한미국대사관 · 2024</div><div class="proj-card-title">AI Tech Camp for Responsible AI</div><div class="proj-card-desc">Knowledge Graph·RAG 기반 AI 리터러시 솔루션 설계, 3박 4일 집중 캠프</div></div>
         </div>
         <div class="proj-card" onclick="openProjModal('ax3')">
-          <div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+          <div class="proj-card-img"><div class="proj-card-img-placeholder">📊</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
           <div class="proj-card-body"><div class="proj-card-tag">경상국립대 · 2025</div><div class="proj-card-title">학생의 AI 과의존 행동 측정 척도 개발</div><div class="proj-card-desc">Bloom's Taxonomy 기반 과의존 행동 분류, 1,000명 설문·확인적 요인분석(CFA)</div></div>
         </div>
       </div>
@@ -581,6 +587,7 @@
   <div class="proj-expanded" id="proj-expanded">
     <div class="proj-cards-grid-full reveal">
       <div class="proj-card" onclick="openProjModal('ax1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · 석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험</div></div></div>
+      <div class="proj-card" onclick="openProjModal('ax4')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🕸️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · Naver Cloud · 2026</div><div class="proj-card-title">온톨로지 기반 지식그래프 리서치 및 구현</div><div class="proj-card-desc">시맨틱 레이어 서비스 기획, Graph RAG·경쟁사 분석·AX 마켓 리서치 및 발표</div></div></div>
       <div class="proj-card" onclick="openProjModal('uxui1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">UX/UI · SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터</div><div class="proj-card-desc">시각장애인 접근성 서비스 기획 (장려상)</div></div></div>
       <div class="proj-card" onclick="openProjModal('ax3')"><div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · 경상국립대 · 2025</div><div class="proj-card-title">학생의 AI 과의존 행동 측정 척도 개발</div><div class="proj-card-desc">Bloom's Taxonomy 기반 분류, 1,000명 설문·CFA</div></div></div>
       <div class="proj-card" onclick="openProjModal('uxui2')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🚜</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">UX/UI · HD현대 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">사업장 인터뷰·WDM, 원격제어 시뮬레이터 와이어프레임</div></div></div>
@@ -920,6 +927,7 @@ const projData={
   ax1:{tag:'Human-AI · 석사 졸업논문',client:'2025.01 – 2025.07 · 기여도 100%',title:'생성형 AI 기반 대화형 검색 시스템의 인터페이스 설계 요소 연구',emoji:'🤖',notion:'https://www.notion.so/nakyungk/Exploratory-AI-Search-22ca511082e98083a2f2e6df2c36762c',overview:'생성형 AI 기반 검색은 즉각적이고 통합된 응답으로 편리함을 제공하지만, 동시에 사용자의 능동적 탐색 행동을 약화시키고 새로운 인지 부하를 유발할 수 있음. 본 연구는 응답 공개 방식(일괄 vs. 점진적)과 프롬프트 주도성 수준(고 vs. 저)이 탐색적 검색 경험에 미치는 영향을 Cognitive Load Theory에 기반하여 실증적으로 검토함.',method:['Claude API를 활용해 Python·Prompt Engineering으로 4가지 조건의 AI 챗봇 직접 구현 (공개 방식×주도성 수준)','점진적 공개 조건: 초기 응답 300~400자 제공 후 "더 보기" 버튼으로 추가 정보 요청 가능','고주도성 조건: 프롬프트 작성 기법 가이드 제공 / 저주도성 조건: AI가 후속 프롬프트를 직접 제안','해조비료·인공나무·식물 간 소통·수직농업 등 4개 탐색 과제 설계 (8분/과제)','36명 피험자 대상 지식 변화·검색 참여도·인지부하 설문 + 프롬프트 제출 횟수·유사도 로그 수집, SPSS 분석'],result:'점진적 공개와 고주도성 조건 모두 지식 변화, 검색 참여도, 심층 인지부하(GCL) 향상 및 불필요한 인지부하(ECL) 감소에 유의미한 효과 (p < .05). 주목할 결과로, 저주도성 조건에서 점진적 공개가 심층 인지부하를 더 크게 높이는 상호작용 효과 발견 → 사용자의 주도성 수준에 따라 정보 제시 방식을 다르게 설계해야 함을 시사. 참가자 56%가 점진적 공개×고주도성 조건을 1순위로 선호. IJHCS (IF 5.1) 게재.',keywords:['Python','Prompt Engineering','SPSS','User Study','Claude API','Cognitive Load Theory','IJHCS']},
   ax2:{tag:'Human-AI · 주한미국대사관',client:'2024.10 – 2024.11 · 기여도 30%',title:'AI Tech Camp for Responsible AI',emoji:'🧠',notion:'',overview:'주한미국대사관 주관 AI 테크캠프. Intel, Google 등 글로벌 IT 기업 전문가들과 함께 Responsible & Ethical AI 동향을 학습하고 AI 리터러시 솔루션을 설계·발표.',method:['AI 리터러시 문제 정의 및 구체화 (비전문가의 AI 응답 할루시네이션 노출 문제)','내부 DB + 검증된 Search API를 결합한 RAG 방식 적용으로 AI 응답 근거 명확화','Knowledge Graph 기반 추론을 통해 AI 응답 과정 시각화하여 투명성 증진','AI 엔지니어·개발자·마케터 등 다양한 직군과 협업'],result:'3박 4일 intensive course 수료. 사용자 관점에서 기술 문제를 해결하는 접근법 습득. 해당 경험을 토대로 졸업 연구 기획·실행으로 이어짐.',keywords:['Responsible AI','RAG','Knowledge Graph','Canva','선발']},
   ax3:{tag:'Human-AI · 경상국립대 석사후연구원',client:'2025.09 – 2025.11 · 기여도 50%',title:'학생의 AI 과의존 행동 측정 척도 개발',emoji:'📊',notion:'https://www.notion.so/nakyungk/322a511082e980399748c3a05c97519a',overview:'학생들의 AI 과의존 행동을 측정하기 위한 분류 방법 및 척도 개발 연구. AI 남용 행동의 원인과 대책을 탐구.',method:['체계적 문헌조사를 통해 행동 지표 기반 AI 과의존 행동 문항 개발','Bloom\'s Taxonomy를 적용해 인지 단계별 척도 구성','1,000명 학생 대상 설문 수행','확인적 요인분석(CFA)으로 인지적 사고 단계에 따른 과의존 행동 분류와 개인적 요인의 영향 검증'],result:'현재 논문 작성 중.',keywords:['CFA','Bloom\'s Taxonomy','Survey','Scale Development','AI Overdependence']},
+  ax4:{tag:'Human-AI · Naver Cloud',client:'2026.01 – 현재 · 기여도 100%',title:'온톨로지 기반 지식그래프 리서치 및 구현',emoji:'🕸️',notion:'',overview:'기업들의 파편화된 데이터를 하나로 통합하고, 온톨로지로 의미론적 맥락을 부여하는 시맨틱 레이어 구축을 목표로 하는 프로젝트. AI Agent 시대에 데이터 간 관계와 맥락을 정의하는 온톨로지의 전략적 중요성이 부각되는 가운데, 방법론 리서치부터 경쟁사 분석, 마켓 리서치, 서비스 기획 보조까지 폭넓게 참여.',method:['<b>서비스 기획 보조</b>: 파편화된 기업 데이터를 통합하는 시맨틱 레이어 구축을 위한 서비스 기획 지원 및 인사이트 도출','<b>방법론 리서치</b>: 기업 문서·논문 기반 온톨로지 개념·구축·맵핑 방법론 정리; 온톨로지 기반 RAG, Hybrid RAG, Graph RAG 방법론 리서치 후 테크팀·기획팀 합동 세미나에서 발표','<b>벤치마킹</b>: Palantir의 서비스 구조·온톨로지 구축 방식·핵심 특장점을 심층 분석하여 벤치마킹 자료 작성','<b>경쟁사 분석</b>: MS, SAP, C3 AI, Cognite 등 주요 경쟁사의 온톨로지 구축 수준·방법론적 현황 분석; 산업군·제품별 온톨로지 레이어 활용 방안의 차별점 제언 및 발표','<b>마켓 리서치</b>: AX·SaaS 시장 현황 파악, AI Agent 시대에 온톨로지의 필요성과 전략적 포지셔닝 분석'],result:'방법론·경쟁사·시장 분석을 종합하여 실무자들의 의사결정을 지원하고, 실제 서비스 구축을 위한 온톨로지 방법론 인사이트 도출 및 공유. 현재 진행 중.',keywords:['Ontology','Knowledge Graph','Graph RAG','Semantic Layer','Palantir','Competitive Analysis','AX','SaaS']},
   // Human-Mobility
   hri1:{tag:'Human-Mobility · 한국자동차연구원 과제',client:'2024.10 – 2025.01 · 기여도 80%',title:'배달로봇의 서비스 실패 상황에서 eHMI 설계 요소에 따른 사용자 평가 연구',emoji:'🤖',notion:'https://www.notion.so/nakyungk/Mobility-Robot-Service-Failure-322a511082e980ef85b4db6b76ceaed2',overview:'배달로봇이 상용화되면서 서비스 실패(배달 지연 등)가 빈번해지고 있으나, 실패 상황에서의 회복 전략에 대한 연구는 부족함. 배달로봇은 산업 로봇(기능 수행)이면서 동시에 소셜 로봇(사용자와 직접 상호작용)의 특성을 가져, 어느 정도의 의인화와 어떤 사과 전략이 효과적인지 불명확함. CASA 이론과 귀인 이론에 기반하여 이를 실증적으로 검토.',method:['음식 배달 지연 시나리오를 가정, Twinmotion으로 실제적인 VR 도심 환경 구현 (Meta Quest 3)','독립변수: 의인화 수준 (고: 인간 이름 "Lily" + 자연스러운 여성 음성 / 저: 제품번호 "RT-01" + 기계음) × 사과 전략 (단순·공감·설명) × 지연 시간 (10분·30분)','12가지 조건을 무작위 순서로 경험, 신뢰·지각된 신뢰성·용서·사용의도 7점 척도 측정','37명 피험자 대상 3-way RM MANOVA + 사후 인터뷰'],result:'<b>설명형 사과</b>가 모든 지연 조건에서 신뢰·신뢰성·용서·사용의도 모두 유의미하게 가장 높은 평가 (p < .01). 공감형 사과는 단순 사과 대비 유의미한 차이 없음 → 배달로봇에는 감정 호소보다 정보 제공이 효과적. <b>고의인화</b> 조건이 신뢰·신뢰성·사용의도에서 유의미하게 더 긍정적 (p < .05), 특히 30분 장기 지연 시 효과 더 뚜렷. 인터뷰: "기계음으로 공감을 표현하니 오히려 더 어색하고 불쾌했다" (P6) → 언어적·비언어적 단서의 불일치가 불쾌감을 유발함. IJHCS (IF 5.1) 게재.',keywords:['Twinmotion','VR','RM MANOVA','SPSS','HRI','Service Recovery','Anthropomorphism','IJHCS']},
   hri2:{tag:'Human-Mobility · 다중 모빌리티 통합 관제',client:'2024.01 – 2025.06 · 기여도 50%',title:'자율주행 모빌리티의 eHMI 설계 요소에 대한 UX 평가 연구',emoji:'🚦',notion:'https://www.notion.so/nakyungk/Katech-eHMI-for-autonomous-vehicles-3896123323aa4723913c016f62c77f5d',overview:'SAE 4-5단계 자율주행 차량에서는 운전자와 보행자의 기존 비언어적 소통(눈 맞춤, 제스처)이 불가능해짐. eHMI(외부 인터페이스)가 대안으로 제안되고 있으나, 기존 지시형 메시지("건너도 됩니다")는 법적·윤리적 문제가 있음. 본 연구는 차량의 물리적 이동 정보(속도, 제동 상태)를 전달하는 eHMI 메시지 유형과 제동 방식이 보행자의 횡단 결정 시간(CDT)에 미치는 영향을 VR 실험으로 분석.',method:['Unity 3D로 VR 도심 공유 공간 시나리오 구현 (HTC VIVE Pro)','독립변수: eHMI 유형 4가지 (없음·속도km/h·텍스트·속도+텍스트) × 제동 방식 2가지 (부드러운·강한)','정지/비정지 시나리오 포함 총 16가지 조건 경험, 횡단 결정 시간(CDT) + 이해도·안전감·정신적 부하·지각된 노력 측정','40명 피험자 대상 RM ANOVA 분석'],result:'eHMI 유형은 CDT에 통계적으로 유의미한 영향 없음(p = .667) → 보행자는 eHMI보다 차량의 물리적 움직임에 더 의존. <b>강한 제동</b>이 부드러운 제동 대비 CDT를 유의미하게 단축 (p < .001). 단, eHMI가 있을 때 이해도·안전감 유의미하게 향상, 정신적 부하·노력 감소 → "속도+텍스트" 조합이 가장 효과적. IJHCI Accepted, HCII 2025 발표.',keywords:['eHMI','Unity 3D','VR','Autonomous Vehicle','Pedestrian','CDT','IJHCI','HCII 2025']},

@@ -339,7 +339,7 @@
     <div class="hero-eyebrow">UX Researcher & Planner</div>
     <h1 class="hero-name" style="font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 2rem; line-height: 1.8;">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
     <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 1.5rem;">심리학과 산업공학 배경으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. <br> 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.</p>
-    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 3.5rem;">특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">제조업·스마트팩토리 환경에서의 AX 설계</span>에 기여하고 싶습니다.</p>
+    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 3.5rem;">특히 <span class="hl-green">AI Transformation</span>에 깊은 관심을 갖고 있으며, <span class="hl-navy">미래 모빌리티 산업과 제조업·스마트팩토리 환경에서의 사용자 경험 설계</span>에 기여하고 싶습니다.</p>
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 3rem; align-items: start;">
@@ -354,12 +354,12 @@
         <div class="stat-label">기업 산학 프로젝트<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
       </a>
       <a href="#projects" class="stat-card" style="padding: 0.8rem 1.2rem;">
-        <div class="stat-num" style="font-size: 1.5rem;">6</div>
+        <div class="stat-num" style="font-size: 1.5rem;">4</div>
         <div class="stat-label">UX/UI 프로젝트<span class="stat-sub">서비스 기획 · 리서치 · 프로토타이핑</span></div>
       </a>
       <a href="#publications" class="stat-card" style="padding: 0.8rem 1.2rem;">
         <div class="stat-num" style="font-size: 1.5rem;">3</div>
-        <div class="stat-label">SCI 저널 게재<span class="stat-sub">IJHCS · IJHCI</span></div>
+        <div class="stat-label">SCI 저널 게재<span class="stat-sub">Int'l Journal of Human-Computer Studies/Interaction</span></div>
       </a>
     </div>
 
@@ -419,10 +419,10 @@
       </summary>
       <div class="exp-details">
         <ul>
-          <li>B2B 신규 AI 모델의 핵심 역량 파악을 위한 경쟁사·시장 리서치 문서화 및 MVP 기획 참여, 내부 미팅 발표</li>
-          <li>Microsoft, SAP, Palantir 등 주요 클라우드·AI 전환 기업의 SaaS, IaaS 서비스 및 기술적 차별점 리서치</li>
-          <li>온톨로지 기반 Knowledge Graph RAG 모델 고도화 방법론 연구 논문과 관련 기업 리서치</li>
-          <li>지식 그래프 기반 RAG 논문을 테크팀·기획팀 합동 세미나에서 2회 발제</li>
+          <li>AI 기반 데이터 통합 및 자동화를 위한 B2B 서비스 기획을 보조하며, AI가 데이터 간 맥락을 이해하고 의사결정에 활용되는 구조를 직접 리서치</li>
+          <li>Palantir, Microsoft 등 주요 AX 기업의 온톨로지 구축 방식과 서비스 구조를 심층 분석하여 벤치마킹 자료 작성</li>
+          <li>Graph RAG·Hybrid RAG 등 지식그래프 기반 RAG 방법론을 테크팀·기획팀이 참여하는 AI 논문 세미나에서 발제하며 기술적 방향성 수립 지원</li>
+          <li>B2B 신규 AI 모델의 핵심 역량 파악을 위한 경쟁사·시장 리서치를 문서화하고 MVP 기획에 참여하며 AI 서비스가 실제 비즈니스 현장에 적용되는 구조를 실무적으로 이해</li>
         </ul>
       </div>
     </details>
@@ -482,21 +482,51 @@
   </div>
   <div class="proj-controls reveal">
     <div class="proj-view-toggle">
-      <button class="proj-view-btn active" onclick="setProjView('gallery',this)">카테고리별 보기</button>
+      <button class="proj-view-btn active" onclick="setProjView('main',this)">메인 프로젝트</button>
+      <button class="proj-view-btn" onclick="setProjView('gallery',this)">카테고리별 보기</button>
       <button class="proj-view-btn" onclick="setProjView('expanded',this)">전체 펼쳐보기</button>
     </div>
   </div>
 
-  <div class="proj-gallery active" id="proj-gallery">
-    <div class="proj-tab-nav">
-      <button class="proj-tab active" onclick="switchTab(0,this)"><span class="proj-tab-icon">🎨</span><span class="proj-tab-label">UX/UI</span></button>
-      <button class="proj-tab" onclick="switchTab(1,this)"><span class="proj-tab-icon">🤖</span><span class="proj-tab-label">Human-AI</span></button>
-      <button class="proj-tab" onclick="switchTab(2,this)"><span class="proj-tab-icon">🚗</span><span class="proj-tab-label">Human-Mobility</span></button>
-      <button class="proj-tab" onclick="switchTab(3,this)"><span class="proj-tab-icon">💼</span><span class="proj-tab-label">Business/Service</span></button>
+  <!-- Main Projects -->
+  <div class="proj-main active" id="proj-main">
+    <div class="proj-category-desc-bar" style="margin-bottom:1.5rem;">대표 프로젝트 모아보기</div>
+    <div class="proj-cards-grid" style="grid-template-columns:repeat(2,minmax(0,360px));">
+      <div class="proj-card" onclick="openProjModal('ax1')">
+        <div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험·SPSS 분석 (IJHCS)</div></div>
+      </div>
+      <div class="proj-card" onclick="openProjModal('uxui2')">
+        <div class="proj-card-img"><div class="proj-card-img-placeholder">🚜</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">사업장 인터뷰·WDM 작업 분석, 원격제어 시뮬레이터 와이어프레임 개발</div></div>
+      </div>
+      <div class="proj-card" onclick="openProjModal('uxui3')">
+        <div class="proj-card-img"><div class="proj-card-img-placeholder">⚡</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">현대 NGV 산학 · 2023</div><div class="proj-card-title">전기차 자동 충전 시나리오 및 UXUI 개발</div><div class="proj-card-desc">전기차 사용자 사용성 인터뷰, 시나리오 기반 UI 프로토타입 구현</div></div>
+      </div>
+      <div class="proj-card" onclick="openProjModal('hri1')">
+        <div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">한국자동차연구원 · 2024</div><div class="proj-card-title">배달로봇 서비스 실패 상황에서의 eHMI 설계 요소 연구</div><div class="proj-card-desc">VR 환경 구현(Twinmotion), 의인화·사과 전략 효과 검증 (IJHCS)</div></div>
+      </div>
+      <div class="proj-card" onclick="openProjModal('hri2')">
+        <div class="proj-card-img"><div class="proj-card-img-placeholder">🚦</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">다중 모빌리티 통합 관제 · 2024</div><div class="proj-card-title">자율주행 모빌리티 eHMI UX 평가</div><div class="proj-card-desc">Unity 3D VR 실험, 제동 방식·eHMI 유형이 보행자 횡단 결정에 미치는 영향 (IJHCI)</div></div>
+      </div>
+      <div class="proj-card" onclick="openProjModal('uxui1')">
+        <div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터</div><div class="proj-card-desc">시각장애인 대상 접근성 서비스 기획, 인터뷰·IA·프로토타입 (장려상)</div></div>
+      </div>
     </div>
+  </div>
 
-    <!-- UX/UI -->
-    <div class="proj-tab-panel active" id="tab-panel-0">
+  <div class="proj-gallery" id="proj-gallery">
+    <div class="proj-tab-nav">
+      <button class="proj-tab active" onclick="switchTab(1,this)"><span class="proj-tab-icon">🎨</span><span class="proj-tab-label">UX/UI</span></button>
+      <button class="proj-tab" onclick="switchTab(2,this)"><span class="proj-tab-icon">🤖</span><span class="proj-tab-label">Human-AI</span></button>
+      <button class="proj-tab" onclick="switchTab(3,this)"><span class="proj-tab-icon">🚗</span><span class="proj-tab-label">Human-Mobility</span></button>
+      <button class="proj-tab" onclick="switchTab(4,this)"><span class="proj-tab-icon">💼</span><span class="proj-tab-label">Business/Service</span></button>
+    </div>
+    <div class="proj-tab-panel active" id="tab-panel-1">
       <div class="proj-category-desc-bar">사용자 리서치 기반 서비스 기획 및 UI 설계</div>
       <div class="proj-cards-grid">
         <div class="proj-card" onclick="openProjModal('uxui1')">
@@ -519,12 +549,12 @@
     </div>
 
     <!-- Human-AI -->
-    <div class="proj-tab-panel" id="tab-panel-1">
+    <div class="proj-tab-panel" id="tab-panel-2">
       <div class="proj-category-desc-bar">생성형 AI, 지식그래프, AI 리터러시 중심 연구</div>
       <div class="proj-cards-grid">
         <div class="proj-card" onclick="openProjModal('ax4')">
           <div class="proj-card-img"><div class="proj-card-img-placeholder">🕸️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
-          <div class="proj-card-body"><div class="proj-card-tag">Naver Cloud · 2026</div><div class="proj-card-title">온톨로지 기반 지식그래프 리서치 및 구현</div><div class="proj-card-desc">시맨틱 레이어 서비스 기획 보조, Graph RAG·경쟁사 분석·AX 마켓 리서치 및 발표</div></div>
+          <div class="proj-card-body"><div class="proj-card-tag">Naver Cloud · 2026</div><div class="proj-card-title">도금욕 공정 온톨로지 자동 구축 및 품질 분석 파이프라인</div><div class="proj-card-desc">LLM 기반 온톨로지 자동 구축을 제조 데이터에 적용, Naive RAG 대비 품질 분석 리포트 15~17% 향상 검증</div></div>
         </div>
         <div class="proj-card" onclick="openProjModal('ax1')">
           <div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
@@ -538,7 +568,7 @@
     </div>
 
     <!-- Human-Mobility -->
-    <div class="proj-tab-panel" id="tab-panel-2">
+    <div class="proj-tab-panel" id="tab-panel-3">
       <div class="proj-category-desc-bar">로봇·자율주행 사용자 경험 연구</div>
       <div class="proj-cards-grid">
         <div class="proj-card" onclick="openProjModal('hri1')">
@@ -557,7 +587,7 @@
     </div>
 
     <!-- Business/Service -->
-    <div class="proj-tab-panel" id="tab-panel-3">
+    <div class="proj-tab-panel" id="tab-panel-4">
       <div class="proj-category-desc-bar">사회적 가치 기반 서비스 기획 및 비즈니스 리서치</div>
       <div class="proj-cards-grid">
         <div class="proj-card" onclick="openProjModal('busi1')">
@@ -575,7 +605,7 @@
   <div class="proj-expanded" id="proj-expanded">
     <div class="proj-cards-grid-full reveal">
       <div class="proj-card" onclick="openProjModal('ax1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🤖</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · 석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험</div></div></div>
-      <div class="proj-card" onclick="openProjModal('ax4')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🕸️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · Naver Cloud · 2026</div><div class="proj-card-title">온톨로지 기반 지식그래프 리서치 및 구현</div><div class="proj-card-desc">시맨틱 레이어 서비스 기획, Graph RAG·경쟁사 분석·AX 마켓 리서치</div></div></div>
+      <div class="proj-card" onclick="openProjModal('ax4')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🕸️</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · Naver Cloud · 2026</div><div class="proj-card-title">도금욕 공정 온톨로지 자동 구축 및 품질 분석 파이프라인</div><div class="proj-card-desc">LLM 기반 온톨로지 자동 구축, Naive RAG 대비 품질 분석 15~17% 향상 검증</div></div></div>
       <div class="proj-card" onclick="openProjModal('uxui1')"><div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">UX/UI · SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터</div><div class="proj-card-desc">시각장애인 접근성 서비스 기획 (장려상)</div></div></div>
       <div class="proj-card" onclick="openProjModal('ax3')"><div class="proj-card-img"><div class="proj-card-img-placeholder">📊</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">Human-AI · 경상국립대 · 2025</div><div class="proj-card-title">학생의 AI 과의존 행동 측정 척도 개발</div><div class="proj-card-desc">Bloom's Taxonomy 기반 분류, 1,000명 설문·확인적 요인분석·구조 방정식</div></div></div>
       <div class="proj-card" onclick="openProjModal('uxui2')"><div class="proj-card-img"><div class="proj-card-img-placeholder">🚜</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div><div class="proj-card-body"><div class="proj-card-tag">UX/UI · HD현대 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">사업장 인터뷰·WDM, 원격제어 시뮬레이터 와이어프레임</div></div></div>
@@ -917,14 +947,19 @@ function switchTab(idx,btn){
   if(panel){panel.classList.add('active');panel.style.display='block';}
 }
 
-// Project view toggle (gallery / expanded)
+// Project view toggle (main / gallery / expanded)
 function setProjView(view,btn){
   document.querySelectorAll('.proj-view-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  const main=document.getElementById('proj-main');
   const gallery=document.getElementById('proj-gallery');
   const expanded=document.getElementById('proj-expanded');
-  if(view==='gallery'){gallery.style.display='block';expanded.style.display='none';}
-  else{gallery.style.display='none';expanded.style.display='block';}
+  main.style.display='none';
+  gallery.style.display='none';
+  expanded.style.display='none';
+  if(view==='main'){main.style.display='block';}
+  else if(view==='gallery'){gallery.style.display='block';}
+  else{expanded.style.display='block';}
 }
 
 // Init on load
@@ -932,7 +967,11 @@ window.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.proj-tab-panel').forEach(p=>{
     p.style.display=p.classList.contains('active')?'block':'none';
   });
+  const main=document.getElementById('proj-main');
+  const gallery=document.getElementById('proj-gallery');
   const exp=document.getElementById('proj-expanded');
+  if(main)main.style.display='block';
+  if(gallery)gallery.style.display='none';
   if(exp)exp.style.display='none';
 });
 
@@ -942,23 +981,23 @@ const projData={
   uxui1:{tag:'UX/UI · SKT & 고용노동부',client:'2025.08 – 2025.10 · 기여도 60% (팀장)',title:'에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터',emoji:'♿',notion:'https://www.notion.so/nakyungk/322a511082e980399748c3a05c97519a',overview:'SKT의 에이닷 AI 에이전트를 활용하여 시각장애인의 사진 촬영·갤러리 관리 접근성을 높이는 포용성 서비스 기획 프로젝트. 궁극적으로 시니어와 같은 디지털 취약계층과 비장애인까지 포용하는 서비스 확대를 목표로 함.',method:['앱 리뷰 크롤링 데이터 기반 페인 포인트 도출','시각장애인 3인 인터뷰를 통한 서비스 니즈 파악','퍼소나·사용자 여정지도·IA 작성, 기능 정의서 작성','대표 화면 및 음성 프로토타입 제작 후 사용자 인터뷰 기반 반복 개선','SKT 현직자 멘토님과의 커뮤니케이션 및 피드백 수렴 담당'],result:'사진 촬영부터 갤러리 검색·공유까지 전 과정을 커버하는 AI 기반 올인원 포토 서비스 제안. 2025 미래내일 일경험 우수사례 공모전 프로젝트 부문 장려상 수상.',keywords:['Jira','Figma','User Interview','IA','Service Planning','장려상','Accessibility']},
   uxui2:{tag:'UX/UI · HD현대 산학과제',client:'2024.04 – 2024.12 · 기여도 30%',title:'굴착기/휠로더 원격제어 사용 환경을 고려한 UI/UX 선행연구',emoji:'🚜',notion:'https://www.notion.so/nakyungk/HD-XiteSolution-Remote-Control-b9c5cff2a7b14a6f8c4c8289cd77fd4c',overview:'원격제어 중장비 기술 발전에 따라 수십만km 거리에서도 원격 작업이 가능해짐. 고위험·감각 의존적인 중장비 작업의 특성을 고려한 원격제어 시스템 인터페이스 연구 및 와이어프레임·UI 컨셉안 개발.',method:['전국 건설·고철 현장 4차례 방문, 작업자 인터뷰 및 작업 영상 촬영','기존 자료·인터뷰·영상 분석 후 IA·WDM·사용자 여정지도 작성','RC 중장비 활용 원격 작업 환경 구현 후 사용자 워크샵 co-design','Tobii Pro Eye Tracker 활용 시선 데이터 수집','Figma로 작업자·관리자용 원격제어 시뮬레이터 와이어프레임 및 UI 컨셉안 개발'],result:'중장비 주요 작업별 비원격 시나리오 구축, eye-tracking·여정지도·인터뷰 데이터 정리, 시뮬레이터 와이어프레임 및 UI 컨셉안 완성.<br><br>⚠️ 대외비로 인해 세부 내용 및 결과 비공개.',keywords:['Figma','Tobii Eye Tracker','WDM','Wireframe','Co-design','User Interview']},
   uxui3:{tag:'UX/UI · 현대 NGV 산학과제',client:'2023.08 – 2023.10',title:'전기차 자동 충전 시나리오 및 UXUI 개발',emoji:'⚡',notion:'https://www.notion.so/nakyungk/NGV-322a511082e9801f97a2fdb27dcb82e4',overview:'전기차 자동 충전 시나리오 기반 UXUI 개발. Figma를 활용하여 충전 어플리케이션 인터페이스 제작.',method:['전기차 사용자 대상 어플리케이션 사용성 인터뷰 수행','기존·신규 사용자의 정보 활용 요구 및 앱 활용 방식 차이 분석','사용 시나리오 기반 UI 프로토타입 구현'],result:'기존·신규 사용자 차이 제언, 사용 시나리오 기반 UI 프로토타입 구현.',keywords:['Figma','Usability Interview','Scenario','Prototype']},
-  uxui4:{tag:'UX/UI · The Millennium Project',client:'2022.10 – 2022.12 · 인턴',title:'TMP 웹사이트 랜딩페이지 리디자인',emoji:'🌐',notion:'https://www.notion.so/nakyungk/The-Millennium-Project-UXUI-d1f58c6301864df8876d6956b2806152',overview:'워싱턴 D.C. 소재 글로벌 싱크탱크 The Millennium Project 인턴으로 근무하며, AGI 전환 대비 컨퍼런스 자료 리서치 및 웹사이트 랜딩페이지 리디자인 수행.',method:['AGI 전환 관련 컨퍼런스 스피치 자료 리서치 및 PPT 제작','인터랙션 흐름 정리, Figma로 asset·figure 제작 후 프로토타입 구현','CEO 및 사내 개발자와 커뮤니케이션하며 기술적 문제점 논의 및 디자인 수정','워드프레스 통계 앱으로 방문 많은 페이지 배치, SEO를 위한 XML sitemaps 생성'],result:'리디자인된 랜딩페이지 및 SEO 최적화 완료. 다양한 국적 팀원과의 국제적 실무 협업 경험.',keywords:['Figma','SEO','Wordpress','Prototyping','Internship']},
-  uxui5:{tag:'UX/UI · DCAMP & 한국HCI학회',client:'2022.01 – 2022.02',title:'3D 모델링 협업 플랫폼 Hummit 서비스 기획',emoji:'🧊',notion:'https://www.notion.so/nakyungk/Hummit_3D-modeling-platform-401e4df94dda418095bc45217263e11b',overview:'한국HCI학회와 DCAMP가 주관하는 UX SALON에서 스타트업 Hummit의 메타버스·3D 에셋 구현 플랫폼 서비스 기능 고도화 프로젝트 참여.',method:['메타버스·3D 모델링 시장조사 수행','사용자 리서치와 여정지도를 통해 개선 요구 도출','3D 오브젝트 모델링 제작 협업툴 기획','Figma를 활용해 프로토타입 제작'],result:'시장조사·유저 리서치 기반 서비스 개선안 제안 및 Figma 프로토타입 완성.',keywords:['Figma','User Research','Prototyping','Metaverse','UX Strategy']},
+  uxui4:{tag:'UX/UI · The Millennium Project',client:'2022.10 – 2022.12 · 인턴',title:'TMP 웹사이트 랜딩페이지 리디자인',emoji:'🌐',notion:'',overview:'워싱턴 D.C. 소재 글로벌 싱크탱크 The Millennium Project 인턴으로 근무하며, AGI 전환 대비 컨퍼런스 자료 리서치 및 웹사이트 랜딩페이지 리디자인 수행.',method:['AGI 전환 관련 컨퍼런스 스피치 자료 리서치 및 PPT 제작','인터랙션 흐름 정리, Figma로 asset·figure 제작 후 프로토타입 구현','CEO 및 사내 개발자와 커뮤니케이션하며 기술적 문제점 논의 및 디자인 수정','워드프레스 통계 앱으로 방문 많은 페이지 배치, SEO를 위한 XML sitemaps 생성'],result:'리디자인된 랜딩페이지 및 SEO 최적화 완료. 다양한 국적 팀원과의 국제적 실무 협업 경험.',keywords:['Figma','SEO','Wordpress','Prototyping','Internship']},
+  uxui5:{tag:'UX/UI · DCAMP & 한국HCI학회',client:'2022.01 – 2022.02',title:'3D 모델링 협업 플랫폼 Hummit 서비스 기획',emoji:'🧊',notion:'',overview:'한국HCI학회와 DCAMP가 주관하는 UX SALON에서 스타트업 Hummit의 메타버스·3D 에셋 구현 플랫폼 서비스 기능 고도화 프로젝트 참여.',method:['메타버스·3D 모델링 시장조사 수행','사용자 리서치와 여정지도를 통해 개선 요구 도출','3D 오브젝트 모델링 제작 협업툴 기획','Figma를 활용해 프로토타입 제작'],result:'시장조사·유저 리서치 기반 서비스 개선안 제안 및 Figma 프로토타입 완성.',keywords:['Figma','User Research','Prototyping','Metaverse','UX Strategy']},
   uxui6:{tag:'UX/UI · 교내 프로젝트',client:'2020.09 – 2020.12',title:'이커머스 라이브커머스 UX 전략 수립',emoji:'🛒',notion:'',overview:"이커머스 앱 '티몬'의 라이브커머스 기능을 위한 시장조사, 유저 리서치 및 UX 전략 수립.",method:['타 기업 라이브커머스 기능 비교 후 가설 수립','설문조사 및 인터뷰 진행하여 가설 검증 (p < .05)'],result:'한정성 UX 요소가 구매 결정에 유의미한 영향을 미침을 제언.',keywords:['Survey','Interview','Statistical Analysis','UX Strategy']},
   // Human-AI
   ax1:{tag:'Human-AI · 석사 졸업논문',client:'2025.01 – 2025.07 · 기여도 100%',title:'생성형 AI 기반 대화형 검색 시스템의 인터페이스 설계 요소 연구',emoji:'🤖',notion:'https://www.notion.so/nakyungk/Exploratory-AI-Search-22ca511082e98083a2f2e6df2c36762c',overview:'생성형 AI 기반 검색은 즉각적이고 통합된 응답으로 편리함을 제공하지만, 동시에 사용자의 능동적 탐색 행동을 약화시키고 새로운 인지 부하를 유발할 수 있음. 본 연구는 응답 공개 방식(일괄 vs. 점진적)과 프롬프트 주도성 수준(고 vs. 저)이 탐색적 검색 경험에 미치는 영향을 Cognitive Load Theory에 기반하여 실증적으로 검토함.',method:['Claude API를 활용해 Python·Prompt Engineering으로 4가지 조건의 AI 챗봇 직접 구현 (공개 방식×주도성 수준)','점진적 공개 조건: 초기 응답 300~400자 제공 후 "더 보기" 버튼으로 추가 정보 요청 가능','고주도성 조건: 프롬프트 작성 기법 가이드 제공 / 저주도성 조건: AI가 후속 프롬프트를 직접 제안','해조비료·인공나무·식물 간 소통·수직농업 등 4개 탐색 과제 설계 (8분/과제)','36명 피험자 대상 지식 변화·검색 참여도·인지부하 설문 + 프롬프트 제출 횟수·유사도 로그 수집, SPSS 분석'],result:'점진적 공개와 고주도성 조건 모두 지식 변화, 검색 참여도, 심층 인지부하(GCL) 향상 및 불필요한 인지부하(ECL) 감소에 유의미한 효과 (p < .05). 주목할 결과로, 저주도성 조건에서 점진적 공개가 심층 인지부하를 더 크게 높이는 상호작용 효과 발견 → 사용자의 주도성 수준에 따라 정보 제시 방식을 다르게 설계해야 함을 시사. 참가자 56%가 점진적 공개×고주도성 조건을 1순위로 선호. IJHCS (IF 5.1) 게재.',keywords:['Python','Prompt Engineering','SPSS','User Study','Claude API','Cognitive Load Theory','IJHCS']},
   ax2:{tag:'Human-AI · 주한미국대사관',client:'2024.10 – 2024.11 · 기여도 30%',title:'AI Tech Camp for Responsible AI',emoji:'🧠',notion:'',overview:'주한미국대사관 주관 AI 테크캠프. Intel, Google 등 글로벌 IT 기업 전문가들과 함께 Responsible & Ethical AI 동향을 학습하고 AI 리터러시 솔루션을 설계·발표.',method:['AI 리터러시 문제 정의 및 구체화 (비전문가의 AI 응답 할루시네이션 노출 문제)','내부 DB + 검증된 Search API를 결합한 RAG 방식 적용으로 AI 응답 근거 명확화','Knowledge Graph 기반 추론을 통해 AI 응답 과정 시각화하여 투명성 증진','AI 엔지니어·개발자·마케터 등 다양한 직군과 협업'],result:'3박 4일 intensive course 수료. 사용자 관점에서 기술 문제를 해결하는 접근법 습득. 해당 경험을 토대로 졸업 연구 기획·실행으로 이어짐.',keywords:['Responsible AI','RAG','Knowledge Graph','Canva','선발']},
-  ax3:{tag:'Human-AI · 경상국립대 석사후연구원',client:'2025.09 – 2025.11 · 기여도 50%',title:'학생의 AI 과의존 행동 측정 척도 개발',emoji:'📊',notion:'https://www.notion.so/nakyungk/322a511082e980399748c3a05c97519a',overview:'학생들의 AI 과의존 행동을 측정하기 위한 분류 방법 및 척도 개발 연구. AI 남용 행동의 원인과 대책을 탐구.',method:['체계적 문헌조사를 통해 행동 지표 기반 AI 과의존 행동 문항 개발','Bloom\'s Taxonomy를 적용해 인지 단계별 척도 구성','1,000명 학생 대상 설문 수행','확인적 요인분석(CFA)으로 인지적 사고 단계에 따른 과의존 행동 분류와 개인적 요인의 영향 검증'],result:'현재 논문 작성 중.',keywords:['CFA','Bloom\'s Taxonomy','Survey','Scale Development','AI Overdependence']},
-  ax4:{tag:'Human-AI · Naver Cloud',client:'2026.01 – 현재 · 기여도 100%',title:'온톨로지 기반 지식그래프 리서치 및 구현',emoji:'🕸️',notion:'',overview:'기업들의 파편화된 데이터를 하나로 통합하고, 온톨로지로 의미론적 맥락을 부여하는 시맨틱 레이어 구축을 목표로 하는 프로젝트. AI Agent 시대에 데이터 간 관계와 맥락을 정의하는 온톨로지의 전략적 중요성이 부각되는 가운데, 방법론 리서치부터 경쟁사 분석, 마켓 리서치, 서비스 기획 보조까지 폭넓게 참여.',method:['<b>서비스 기획 보조</b>: 파편화된 기업 데이터를 통합하는 시맨틱 레이어 구축을 위한 서비스 기획 지원 및 인사이트 도출','<b>방법론 리서치</b>: 기업 문서·논문 기반 온톨로지 개념·구축·맵핑 방법론 정리; 온톨로지 기반 RAG, Hybrid RAG, Graph RAG 방법론 리서치 후 테크팀·기획팀 합동 세미나에서 발표','<b>벤치마킹</b>: Palantir의 서비스 구조·온톨로지 구축 방식·핵심 특장점을 심층 분석하여 벤치마킹 자료 작성','<b>경쟁사 분석</b>: MS, SAP, C3 AI, Cognite 등 주요 경쟁사의 온톨로지 구축 수준·방법론적 현황 분석; 산업군·제품별 온톨로지 레이어 활용 방안의 차별점 제언 및 발표','<b>마켓 리서치</b>: AX·SaaS 시장 현황 파악, AI Agent 시대에 온톨로지의 필요성과 전략적 포지셔닝 분석'],result:'방법론·경쟁사·시장 분석을 종합하여 실무자들의 의사결정을 지원하고, 실제 서비스 구축을 위한 온톨로지 방법론 인사이트 도출 및 공유. 현재 진행 중.',keywords:['Ontology','Knowledge Graph','Graph RAG','Semantic Layer','Palantir','Competitive Analysis','AX','SaaS']},
+  ax3:{tag:'Human-AI · 경상국립대 석사후연구원',client:'2025.09 – 2025.11 · 기여도 50%',title:'학생의 AI 과의존 행동 측정 척도 개발',emoji:'📊',notion:'',overview:'학생들의 AI 과의존 행동을 측정하기 위한 분류 방법 및 척도 개발 연구. AI 남용 행동의 원인과 대책을 탐구.',method:['체계적 문헌조사를 통해 행동 지표 기반 AI 과의존 행동 문항 개발','Bloom\'s Taxonomy를 적용해 인지 단계별 척도 구성','1,000명 학생 대상 설문 수행','확인적 요인분석(CFA)으로 인지적 사고 단계에 따른 과의존 행동 분류와 개인적 요인의 영향 검증'],result:'현재 논문 작성 중.',keywords:['CFA','Bloom\'s Taxonomy','Survey','Scale Development','AI Overdependence']},
+  ax4:{tag:'Human-AI · Naver Cloud',client:'2026.01 – 현재 · 기여도 100%',title:'도금욕 공정 온톨로지 자동 구축 및 품질 분석 파이프라인',emoji:'🕸️',notion:'',overview:'LLM 기반 온톨로지 자동 구축 방법론을 실제 제조 데이터에 적용하여 AI 품질 분석 리포트 품질 향상을 검증한 미니 프로젝트. 네이버클라우드 AI 기획팀 인턴 과정에서 "LLM이 문서를 읽고 자동으로 온톨로지를 구축할 수 있는가? 그리고 그 온톨로지가 실제 산업 현장에서 AI의 추론 품질을 높여줄 수 있는가?"라는 질문을 KAMP 도금욕 공정 데이터로 직접 검증.',method:['<b>온톨로지 자동 구축</b>: GPT-4o로 KAMP 가이드북을 분석해 Competency Questions 10개를 자동 생성, TBox(클래스·관계·인과규칙) 설계 → RDFLib으로 OWL/Turtle 형식 온톨로지 구축','<b>Human-in-the-loop</b>: LLM 자동 설정 정상범위(min~max)를 데이터 사분위수(25%~75%) 기반으로 전문가 검토 후 수정 → 향상률 4.3% → 15~17%로 개선','<b>비교 실험</b>: Lot별 온톨로지 규칙 위반 분석(ABox) 후 Naive RAG(데이터만 제공) vs. 온톨로지 기반 RAG(데이터+온톨로지) 품질 분석 리포트 비교','<b>LLM Judge 평가</b>: 정확성·구체성·인과관계·실용성 4개 기준(각 10점)으로 Lot 3·8·10 평가 → 온톨로지 기반 RAG 평균 33.7/40 vs. Naive RAG 28.7/40'],result:'온톨로지 기반 RAG가 Naive RAG 대비 품질 분석 리포트 품질 <b>15~17% 향상</b>. pH 이상 → 내구성 저하 등 공정 인과관계를 명시적으로 표현, 변수별 구체적 권고사항 제시. 핵심 발견: 온톨로지 구조보다 그 안의 지식 정확도가 품질을 결정하며, LLM 자동화와 Human-in-the-loop의 병행이 필수임을 실험으로 확인.',keywords:['Python','GPT-4o','RDFLib','OWL/Turtle','RAG','Knowledge Graph','Ontology','KAMP','제조 AI']},
   // Human-Mobility
   hri1:{tag:'Human-Mobility · 한국자동차연구원 과제',client:'2024.10 – 2025.01 · 기여도 80%',title:'배달로봇의 서비스 실패 상황에서 eHMI 설계 요소에 따른 사용자 평가 연구',emoji:'🤖',notion:'https://www.notion.so/nakyungk/Mobility-Robot-Service-Failure-322a511082e980ef85b4db6b76ceaed2',overview:'배달로봇이 상용화되면서 서비스 실패(배달 지연 등)가 빈번해지고 있으나, 실패 상황에서의 회복 전략에 대한 연구는 부족함. 배달로봇은 산업 로봇(기능 수행)이면서 동시에 소셜 로봇(사용자와 직접 상호작용)의 특성을 가져, 어느 정도의 의인화와 어떤 사과 전략이 효과적인지 불명확함. CASA 이론과 귀인 이론에 기반하여 이를 실증적으로 검토.',method:['음식 배달 지연 시나리오를 가정, Twinmotion으로 실제적인 VR 도심 환경 구현 (Meta Quest 3)','독립변수: 의인화 수준 (고: 인간 이름 "Lily" + 자연스러운 여성 음성 / 저: 제품번호 "RT-01" + 기계음) × 사과 전략 (단순·공감·설명) × 지연 시간 (10분·30분)','12가지 조건을 무작위 순서로 경험, 신뢰·지각된 신뢰성·용서·사용의도 7점 척도 측정','37명 피험자 대상 3-way RM MANOVA + 사후 인터뷰'],result:'<b>설명형 사과</b>가 모든 지연 조건에서 신뢰·신뢰성·용서·사용의도 모두 유의미하게 가장 높은 평가 (p < .01). 공감형 사과는 단순 사과 대비 유의미한 차이 없음 → 배달로봇에는 감정 호소보다 정보 제공이 효과적. <b>고의인화</b> 조건이 신뢰·신뢰성·사용의도에서 유의미하게 더 긍정적 (p < .05), 특히 30분 장기 지연 시 효과 더 뚜렷. 인터뷰: "기계음으로 공감을 표현하니 오히려 더 어색하고 불쾌했다" (P6) → 언어적·비언어적 단서의 불일치가 불쾌감을 유발함. IJHCS (IF 5.1) 게재.',keywords:['Twinmotion','VR','RM MANOVA','SPSS','HRI','Service Recovery','Anthropomorphism','IJHCS']},
   hri2:{tag:'Human-Mobility · 다중 모빌리티 통합 관제',client:'2024.01 – 2025.06 · 기여도 50%',title:'자율주행 모빌리티의 eHMI 설계 요소에 대한 UX 평가 연구',emoji:'🚦',notion:'https://www.notion.so/nakyungk/Katech-eHMI-for-autonomous-vehicles-3896123323aa4723913c016f62c77f5d',overview:'SAE 4-5단계 자율주행 차량에서는 운전자와 보행자의 기존 비언어적 소통(눈 맞춤, 제스처)이 불가능해짐. eHMI(외부 인터페이스)가 대안으로 제안되고 있으나, 기존 지시형 메시지("건너도 됩니다")는 법적·윤리적 문제가 있음. 본 연구는 차량의 물리적 이동 정보(속도, 제동 상태)를 전달하는 eHMI 메시지 유형과 제동 방식이 보행자의 횡단 결정 시간(CDT)에 미치는 영향을 VR 실험으로 분석.',method:['Unity 3D로 VR 도심 공유 공간 시나리오 구현 (HTC VIVE Pro)','독립변수: eHMI 유형 4가지 (없음·속도km/h·텍스트·속도+텍스트) × 제동 방식 2가지 (부드러운·강한)','정지/비정지 시나리오 포함 총 16가지 조건 경험, 횡단 결정 시간(CDT) + 이해도·안전감·정신적 부하·지각된 노력 측정','40명 피험자 대상 RM ANOVA 분석'],result:'eHMI 유형은 CDT에 통계적으로 유의미한 영향 없음(p = .667) → 보행자는 eHMI보다 차량의 물리적 움직임에 더 의존. <b>강한 제동</b>이 부드러운 제동 대비 CDT를 유의미하게 단축 (p < .001). 단, eHMI가 있을 때 이해도·안전감 유의미하게 향상, 정신적 부하·노력 감소 → "속도+텍스트" 조합이 가장 효과적. IJHCI Accepted, HCII 2025 발표.',keywords:['eHMI','Unity 3D','VR','Autonomous Vehicle','Pedestrian','CDT','IJHCI','HCII 2025']},
   hri3:{tag:'Human-Mobility · LG전자 산학과제',client:'2023.10 – 2023.12 · 기여도 25%',title:'인간공학 관점의 최적 모니터 검증',emoji:'🖥️',notion:'',overview:'대형 곡률 디스플레이에서 화면 곡률과 Control-Display 이득이 포인팅 수행에 미치는 영향 연구.',method:['자극물 구현, 과업 설계, 실험 진행','SPSS 기반 통계 분석 및 결론 도출'],result:'인간공학적 최적 모니터 조건 도출. IEA 2024 학회 발표.<br><br>⚠️ 대외비로 인해 세부 내용 비공개.',keywords:['Ergonomics','SPSS','Experiment Design','Large Display','IEA 2024']},
   // Business/Service
-  busi1:{tag:'Business/Service · 연세대 글로벌사회연구원',client:'2022.07 – 2023.01 · 팀장',title:'소비자의 수직농업 상품 수용에 영향을 미치는 주요 요인 연구',emoji:'🌱',notion:'https://nakyungk.notion.site/SEF-Social-Engagement-Fund-7751b0829c0a4f44941c52f01374dbe3',overview:'글로벌 사회 이슈 해결을 위한 학생 주도 연구 펀드(SEF)에 선정. 지속가능한 식량 생산을 위한 미국 수직농업 현황 및 소비자 인식·태도 연구 기획·주도.',method:['6개월간 미국 현지에서 수직농장 방문 및 현장 조사','국내 연구팀과 협업하여 인터뷰·설문 진행','279명 데이터 수집 및 통계적 분석','연구 결과를 영상과 보고서로 제작·홍보, IGEE 2023 발표'],result:'소비자들은 수직농업의 지속가능성보다 신선도·무농약·지역 생산 등 실질적 이점이 강조될 때 더 높은 구매 의사를 보임. Social Engagement Fund Best Research Team 우수상 수상.',keywords:['Survey','Statistical Analysis','Research Lead','Sustainability','SEF 우수상']},
-  busi2:{tag:'Business/Service · 보조기기 아이디어 공모전',client:'2021',title:"치매 노인을 위한 디지털 치료제 '일비'",emoji:'💊',notion:'https://www.notion.so/nakyungk/_-16c98000d2ea49cb931ceca8af783de6',overview:'경증 인지 장애를 겪는 치매 노인의 인지 능력 향상과 악화 방지를 돕는 디지털 치료제 앱 기획. 증거기반치료(EBT) 원리를 바탕으로 설계.',method:['디지털 정신건강 및 행동심리학 기반 EBT 논문 리서치','고령자도 쉽게 사용할 수 있도록 직관적 인터페이스와 게이미피케이션 요소 설계','Figma를 활용해 실제 프로토타입 제작'],result:'아이디어의 실효성과 보조기기로서의 가능성을 인정받아 경기도재활공학서비스연구지원센터 보조기기 아이디어 공모전 입선.',keywords:['Figma','Digital Therapeutics','EBT','Gamification','입선']},
-  busi3:{tag:'Business/Service · 교내 프로젝트',client:'',title:"정신질환자 보호자를 위한 온라인 자조모임 앱 'WhyNot?'",emoji:'🫂',notion:'https://www.notion.so/nakyungk/Why-Not-_-8c10eee6e46c400f82a0a0eb355b9bf1',overview:'조현병 등 중증 정신질환자의 보호자들은 끝없는 치료·재발 반복, 증상에 대한 충격, 사회적 낙인으로 인해 우울·불안을 느끼기 쉬움에도 불구하고 고립되기 쉬움. 보호자들이 안전하게 정보를 공유하고 서로를 위로할 수 있는 온라인 자조모임 어플리케이션을 기획.',method:['페인포인트 도출: 정신질환의 낙인 문제로 인한 폐쇄적 커뮤니티, 증상 기반 진단 특성으로 인한 약물·치료법 이해의 어려움, 보호자 정서적 소진 문제 정의','보호자 대상 정보 공유·정서적 지지 기능 중심 서비스 기획','익명성 보장 기반 자조모임 구조 설계, 진단·치료 정보 공유 기능 및 커뮤니티 기능 정의'],result:'정신질환 보호자를 위한 온라인 자조모임 앱 기획 완료. 사회적 낙인 없이 정보와 감정을 나눌 수 있는 안전한 커뮤니티 서비스 제안.',keywords:['Service Planning','Mental Health','Caregiver Support','Community','UX Strategy']},
-  busi4:{tag:'Business/Service · 한이음 ICT멘토링',client:'2021.03 – 2021.12',title:"배달공유 앱 'Youreat' UX 기획 및 개발",emoji:'📱',notion:'https://www.notion.so/nakyungk/_Youreat-d26ce74db87c4f01885a85c654cc490d',overview:'배달공유 어플리케이션 기획 및 시장조사, 유저 리서치 진행.',method:['MVP 구현을 위해 기능 및 사용자 사용 시나리오 정의','Figma를 활용하여 프로토타입 제작','Kotlin을 활용하여 로그인 페이지 프론트엔드 프로그래밍 보조'],result:'서비스 기획부터 프로토타입, 개발 보조까지 전 과정 경험.',keywords:['Figma','Kotlin','User Research','Prototyping']}
+  busi1:{tag:'Business/Service · 연세대 글로벌사회연구원',client:'2022.07 – 2023.01 · 팀장',title:'소비자의 수직농업 상품 수용에 영향을 미치는 주요 요인 연구',emoji:'🌱',notion:'',overview:'글로벌 사회 이슈 해결을 위한 학생 주도 연구 펀드(SEF)에 선정. 지속가능한 식량 생산을 위한 미국 수직농업 현황 및 소비자 인식·태도 연구 기획·주도.',method:['6개월간 미국 현지에서 수직농장 방문 및 현장 조사','국내 연구팀과 협업하여 인터뷰·설문 진행','279명 데이터 수집 및 통계적 분석','연구 결과를 영상과 보고서로 제작·홍보, IGEE 2023 발표'],result:'소비자들은 수직농업의 지속가능성보다 신선도·무농약·지역 생산 등 실질적 이점이 강조될 때 더 높은 구매 의사를 보임. Social Engagement Fund Best Research Team 우수상 수상.',keywords:['Survey','Statistical Analysis','Research Lead','Sustainability','SEF 우수상']},
+  busi2:{tag:'Business/Service · 보조기기 아이디어 공모전',client:'2021',title:"치매 노인을 위한 디지털 치료제 '일비'",emoji:'💊',notion:'',overview:'경증 인지 장애를 겪는 치매 노인의 인지 능력 향상과 악화 방지를 돕는 디지털 치료제 앱 기획. 증거기반치료(EBT) 원리를 바탕으로 설계.',method:['디지털 정신건강 및 행동심리학 기반 EBT 논문 리서치','고령자도 쉽게 사용할 수 있도록 직관적 인터페이스와 게이미피케이션 요소 설계','Figma를 활용해 실제 프로토타입 제작'],result:'아이디어의 실효성과 보조기기로서의 가능성을 인정받아 경기도재활공학서비스연구지원센터 보조기기 아이디어 공모전 입선.',keywords:['Figma','Digital Therapeutics','EBT','Gamification','입선']},
+  busi3:{tag:'Business/Service · 교내 프로젝트',client:'',title:"정신질환자 보호자를 위한 온라인 자조모임 앱 'WhyNot?'",emoji:'🫂',notion:'',overview:'조현병 등 중증 정신질환자의 보호자들은 끝없는 치료·재발 반복, 증상에 대한 충격, 사회적 낙인으로 인해 우울·불안을 느끼기 쉬움에도 불구하고 고립되기 쉬움. 보호자들이 안전하게 정보를 공유하고 서로를 위로할 수 있는 온라인 자조모임 어플리케이션을 기획.',method:['페인포인트 도출: 정신질환의 낙인 문제로 인한 폐쇄적 커뮤니티, 증상 기반 진단 특성으로 인한 약물·치료법 이해의 어려움, 보호자 정서적 소진 문제 정의','보호자 대상 정보 공유·정서적 지지 기능 중심 서비스 기획','익명성 보장 기반 자조모임 구조 설계, 진단·치료 정보 공유 기능 및 커뮤니티 기능 정의'],result:'정신질환 보호자를 위한 온라인 자조모임 앱 기획 완료. 사회적 낙인 없이 정보와 감정을 나눌 수 있는 안전한 커뮤니티 서비스 제안.',keywords:['Service Planning','Mental Health','Caregiver Support','Community','UX Strategy']},
+  busi4:{tag:'Business/Service · 한이음 ICT멘토링',client:'2021.03 – 2021.12',title:"배달공유 앱 'Youreat' UX 기획 및 개발",emoji:'📱',notion:'',overview:'배달공유 어플리케이션 기획 및 시장조사, 유저 리서치 진행.',method:['MVP 구현을 위해 기능 및 사용자 사용 시나리오 정의','Figma를 활용하여 프로토타입 제작','Kotlin을 활용하여 로그인 페이지 프론트엔드 프로그래밍 보조'],result:'서비스 기획부터 프로토타입, 개발 보조까지 전 과정 경험.',keywords:['Figma','Kotlin','User Research','Prototyping']}
 };
 
 function openProjModal(id){

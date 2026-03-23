@@ -350,8 +350,8 @@
         <div class="stat-label">인턴십<span class="stat-sub">Naver Cloud · The Millennium Project</span></div>
       </a>
       <a href="#projects" class="stat-card" style="padding: 0.8rem 1.2rem;">
-        <div class="stat-num" style="font-size: 1.5rem;">3</div>
-        <div class="stat-label">기업 산학 프로젝트<span class="stat-sub">HD현대 · LG전자 · 한국자동차연구원</span></div>
+        <div class="stat-num" style="font-size: 1.5rem;">4</div>
+        <div class="stat-label">기업 산학 프로젝트<span class="stat-sub">HD현대 · 현대NGV · LG전자 · 한국자동차연구원</span></div>
       </a>
       <a href="#projects" class="stat-card" style="padding: 0.8rem 1.2rem;">
         <div class="stat-num" style="font-size: 1.5rem;">4</div>
@@ -491,14 +491,27 @@
   <!-- Main Projects -->
   <div class="proj-main active" id="proj-main">
     <div class="proj-category-desc-bar" style="margin-bottom:1.5rem;">대표 프로젝트 모아보기</div>
-    <div class="proj-cards-grid" style="grid-template-columns:repeat(2,minmax(0,360px));">
+    <div class="proj-cards-grid" style="grid-template-columns:repeat(3,minmax(0,360px));">
       <div class="proj-card" onclick="openProjModal('uxui2')">
-        <div class="proj-card-img"><div class="proj-card-img-placeholder">🚜</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-img" style="background:#000;">
+          <img src="images/HDX.jpg" alt="HD현대 원격제어" style="width:100%;height:100%;object-fit:cover;">
+          <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
+        </div>
         <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">사업장 인터뷰·WDM 작업 분석, 원격제어 시뮬레이터 와이어프레임 개발</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('uxui1')">
-        <div class="proj-card-img"><div class="proj-card-img-placeholder">♿</div><div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div></div>
+        <div class="proj-card-img" style="background:#000;">
+          <img src="images/ADOT.jpg" alt="에이닷" style="width:100%;height:100%;object-fit:cover;">
+          <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
+        </div>
         <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터</div><div class="proj-card-desc">시각장애인 대상 접근성 서비스 기획, 인터뷰·IA·프로토타입 (장려상)</div></div>
+      </div>
+      <div class="proj-card" onclick="openProjModal('ax1')">
+        <div class="proj-card-img" style="background:#000;">
+          <img src="images/EXPLORAI.png" alt="생성형 AI 검색 연구" style="width:100%;height:100%;object-fit:cover;">
+          <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
+        </div>
+        <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">Claude API로 AI 챗봇 직접 구현, 40명 피험자 실험·SPSS 분석 (IJHCS)</div></div>
       </div>
     </div>
   </div>

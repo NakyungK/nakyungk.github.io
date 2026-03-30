@@ -194,6 +194,10 @@
     .modal-insight{margin-top:0.8rem;padding:0.7rem 1rem;background:var(--navy-light);border-left:3px solid var(--navy);border-radius:0 4px 4px 0;font-size:0.84rem;color:var(--ink-mid);line-height:1.75;}
     .proj-modal-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
     .proj-modal-keyword{font-size:0.7rem;font-weight:500;color:var(--navy);background:var(--navy-light);padding:0.2rem 0.6rem;border-radius:3px;}
+    .proj-modal-github{margin-top:1.4rem;padding:1rem 1.2rem;background:var(--navy-light);border-radius:8px;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+    .proj-modal-github p{font-size:0.85rem;color:var(--ink-mid);margin:0;flex:1;min-width:180px;}
+    .proj-modal-github a{display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.1rem;background:var(--navy);color:#fff;font-size:0.8rem;font-weight:600;border-radius:6px;text-decoration:none;transition:background 0.2s;}
+    .proj-modal-github a:hover{background:var(--green);}
 
     /* ── PROJECT TABS ── */
     .proj-tab-nav{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--line);padding-bottom:0;}
@@ -1038,7 +1042,8 @@ const projData={
     overview:'Naver Cloud 인턴 근무 중 AX 프로젝트 리서치를 하면서, 데이터를 그냥 AI에 던져주는 방식만으로는 "이 수치가 왜 문제인지"를 AI가 이해할 수 있을까라는 의문이 생겼습니다. 방법론을 직접 검증해보고 싶어 개인 프로젝트로 이어갔습니다. 제조업 공정을 이해하기 위해 품질관리 AI 데이터분석 강의(윈스펙)를 수강하고, 실습 데이터인 KAMP 도금욕 공정 데이터를 바탕으로 LLM 기반 온톨로지 자동 구축 파이프라인을 직접 구현하고 검증했습니다.',
     method:['<b>온톨로지 자동 구축</b> — GPT-4o로 공정 가이드북을 분석해 핵심 질문 10개를 자동 생성하고, 클래스·관계·인과규칙을 정의한 뒤 RDFLib으로 OWL/Turtle 형식 온톨로지 구축','<b>Human-in-the-loop</b> — LLM이 자동 설정한 정상범위를 실제 데이터 분포(사분위수)와 비교하고 전문가가 검토·수정. 이 과정에서 품질 향상률이 4.3%에서 15~17%로 개선','<b>비교 실험</b> — 데이터만 제공하는 Naive RAG와 온톨로지 기반 RAG를 동일 조건에서 비교','<b>품질 평가</b> — LLM Judge로 정확성·구체성·인과관계·실용성 4개 기준(각 10점)으로 분석 리포트 품질을 정량 평가'],
     result:'<ul><li>온톨로지 기반 RAG가 Naive RAG 대비 품질 분석 리포트를 <b>15~17% 향상</b></li><li>AI가 "pH가 낮다"는 수치를 넘어 "pH 이상 → 도금층 내구성 저하"라는 인과 관계를 이해하고 구체적인 권고사항을 제시하게 됨</li></ul><div class="modal-insight">온톨로지의 구조보다 그 안에 담긴 지식의 정확도가 결과를 결정합니다. LLM 자동화와 전문가 검토(Human-in-the-loop)의 병행이 필수임을 실험으로 확인했습니다.</div>',
-    keywords:['Python','GPT-4o','RDFLib','OWL/Turtle','RAG','Knowledge Graph','Ontology','KAMP','제조 AI']},
+    keywords:['Python','GPT-4o','RDFLib','OWL/Turtle','RAG','Knowledge Graph','Ontology','KAMP','제조 AI'],
+    github:'https://github.com/NakyungK/LLM-Ontology-for-Manufacturing-QA'},
 
   hri1:{tag:'Human-Mobility · 한국자동차연구원 과제',client:'2024.10 – 2025.01 · 기여도 80%',title:'배달로봇의 서비스 실패 상황에서 eHMI 설계 요소에 따른 사용자 평가 연구',
     overview:'로봇이 사과를 해야 한다면, 얼마나 인간처럼 굴어야 할까라는 의문에서 연구를 시작하였습니다. 배달로봇이 음식을 30분 늦게 가져왔을 때, 의인화 수준과 사과 전략의 조합이 사용자의 신뢰 회복에 어떤 영향을 주는지 실험으로 검증했습니다.',
@@ -1079,6 +1084,7 @@ function openProjModal(id){
     +(d.overview?'<div class="proj-modal-section-title">개요</div><div class="proj-modal-body">'+d.overview+'</div>':'')
     +(d.method&&d.method.length?'<div class="proj-modal-section-title">수행 방법</div><div class="proj-modal-body"><ul>'+d.method.map(m=>'<li>'+m+'</li>').join('')+'</ul></div>':'')
     +(d.result?'<div class="proj-modal-section-title">결과 및 배운 점</div><div class="proj-modal-body">'+d.result+'</div>':'')
+    +(d.github?'<div class="proj-modal-github"><p>더 자세한 파이프라인은 깃허브에서 확인해주세요!</p><a href="'+d.github+'" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>깃허브</a></div>':'')
     +(d.keywords&&d.keywords.length?'<div class="proj-modal-tags">'+d.keywords.map(k=>'<span class="proj-modal-keyword">'+k+'</span>').join('')+'</div>':'');
   document.getElementById('proj-modal-content').innerHTML=html;
   document.getElementById('proj-modal-overlay').classList.add('open');

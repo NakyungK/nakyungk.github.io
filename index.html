@@ -212,6 +212,7 @@
     .proj-modal-body ul li{padding-left:1.4rem;position:relative;}
     .proj-modal-body ul li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;font-size:0.82rem;}
     .modal-insight::before{content:'배운 점';display:block;font-size:0.63rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy-mid);margin-bottom:0.35rem;}
+    .proj-card-cat-badge{position:absolute;top:0.55rem;left:0.55rem;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:rgba(27,42,74,0.82);padding:0.2rem 0.55rem;border-radius:4px;z-index:2;backdrop-filter:blur(4px);}
 
     /* ── PROJECT TABS ── */
     .proj-tab-nav{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--line);padding-bottom:0;}
@@ -525,31 +526,35 @@
     <div class="proj-cards-grid" style="grid-template-columns:repeat(2,minmax(0,360px));">
       <div class="proj-card" onclick="openProjModal('ax4')">
         <div class="proj-card-img">
-          <img src="images/ontology_thumb.png" alt="온톨로지 자동 구축 파이프라인" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/ontology_thumb.png" alt="온톨로지 자동 구축 파이프라인">
+          <span class="proj-card-cat-badge">AX</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">개인 프로젝트 · Naver Cloud 인턴 기반 · 2026</div><div class="proj-card-title">도금욕 공정 온톨로지 자동 구축 및 품질 분석 파이프라인</div><div class="proj-card-desc">AI에 데이터를 넣어도 맥락을 이해하지 못한다는 문제의식에서 출발. 온톨로지로 의미 구조를 부여해 분석 리포트 품질 15~17% 향상</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">개인 프로젝트 · Naver Cloud 인턴 기반 · 2026</div><div class="proj-card-title">LLM에 제조 도메인 지식 심기 — 온톨로지 파이프라인</div><div class="proj-card-desc">AI에 데이터를 넣어도 맥락을 이해하지 못한다는 문제의식에서 출발. 온톨로지로 의미 구조를 부여해 분석 리포트 품질 15~17% 향상</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('uxui1')">
         <div class="proj-card-img">
-          <img src="images/adot_thumb.png" alt="에이닷" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/adot_thumb.png" alt="에이닷">
+          <span class="proj-card-cat-badge">서비스기획</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터</div><div class="proj-card-desc">시각장애인이 사진을 '활용하지 않는다'는 기존 인식을 뒤집고, 음성 기반 AI로 촬영부터 갤러리 관리까지 전 여정을 재설계 (장려상)</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷으로 시각장애인 접근성 서비스 기획</div><div class="proj-card-desc">시각장애인이 사진을 '활용하지 않는다'는 기존 인식을 뒤집고, 음성 기반 AI로 촬영부터 갤러리 관리까지 전 여정을 재설계 (장려상)</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('ax1')">
         <div class="proj-card-img">
-          <img src="images/ai_search_thumb.png" alt="생성형 AI 검색 연구" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/ai_search_thumb.png" alt="생성형 AI 검색 연구">
+          <span class="proj-card-cat-badge">UXUI</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">AI가 모든 답을 바로 줘버릴 때 사용자 탐색이 약해진다는 문제의식으로, 응답 공개 방식×주도성 4조건 실험 설계·직접 구현 (IJHCS 1저자)</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">정보 공개 방식 × 주도성 — AI 검색 UX 실험</div><div class="proj-card-desc">AI가 모든 답을 바로 줘버릴 때 사용자 탐색이 약해진다는 문제의식으로, 응답 공개 방식×주도성 4조건 실험 설계·직접 구현 (IJHCS 1저자)</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('uxui2')">
         <div class="proj-card-img">
-          <img src="images/hdx_thumb.png" alt="HD현대 원격제어" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/hdx_thumb.png" alt="HD현대 원격제어">
+          <span class="proj-card-cat-badge">UXUI</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">감각이 차단된 원격 상황에서의 인지 부담을 현장 4곳 직접 방문으로 규명, 작업 분석·Co-design·Eye Tracking 기반 와이어프레임 완성</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">중장비 원격제어 UX 리서치 및 UI 컨셉안 제작 — 현장·워크샵을 통한 사용자 조사 다각화</div><div class="proj-card-desc">감각이 차단된 원격 상황에서의 인지 부담을 현장 4곳 직접 방문으로 규명, 작업 분석·Co-design·Eye Tracking 기반 와이어프레임 완성</div></div>
       </div>
     </div>
   </div>

@@ -160,7 +160,7 @@
 
     .proj-card{background:#fff;display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden;cursor:pointer;border-radius:8px;border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,0.05);}
     .proj-card-img{width:100%;aspect-ratio:16/9;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;position:relative;}
-    .proj-card-img img{width:100%;height:100%;object-fit:cover;}
+    .proj-card-img img{width:100%;height:100%;object-fit:contain;}
     .proj-card-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;position:relative;overflow:hidden;}
     .proj-card-img-placeholder::before{content:'';position:absolute;inset:0;opacity:0.13;background-image:repeating-linear-gradient(45deg,currentColor 0,currentColor 1px,transparent 0,transparent 50%);background-size:8px 8px;}
     .proj-placeholder-label{font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.7);z-index:1;}
@@ -201,7 +201,7 @@
 
     /* ── MODAL VISUAL IMPROVEMENTS ── */
     .proj-modal-hero{width:100%;height:200px;border-radius:8px;overflow:hidden;margin-bottom:1.3rem;background:var(--navy-light);}
-    .proj-modal-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+    .proj-modal-hero img{width:100%;height:100%;object-fit:contain;display:block;}
     .proj-modal-header-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.6rem;margin-bottom:0;}
     .proj-modal-header-kw{font-size:0.67rem;font-weight:500;color:var(--ink-muted);background:var(--bg-alt);border:1px solid var(--line);padding:0.15rem 0.5rem;border-radius:20px;}
     .modal-steps{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem;margin:0;}
@@ -212,6 +212,7 @@
     .proj-modal-body ul li{padding-left:1.4rem;position:relative;}
     .proj-modal-body ul li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;font-size:0.82rem;}
     .modal-insight::before{content:'배운 점';display:block;font-size:0.63rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy-mid);margin-bottom:0.35rem;}
+    .proj-card-cat-badge{position:absolute;top:0.55rem;left:0.55rem;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:rgba(27,42,74,0.82);padding:0.2rem 0.55rem;border-radius:4px;z-index:2;backdrop-filter:blur(4px);}
 
     /* ── PROJECT TABS ── */
     .proj-tab-nav{display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--line);padding-bottom:0;}
@@ -374,7 +375,7 @@
     <div class="hero-eyebrow">UX Researcher & Planner</div>
     <h1 class="hero-name" style="font-size: 1.8rem; margin-top: 0.8rem; margin-bottom: 1rem; line-height: 1.8;">사람을 이해하고,<br/><em>경험을 설계합니다.</em></h1>
 
-    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 1rem;">심리학과 산업공학 배경으로, 사용자의 행동과 인지를 깊이 이해하고 더 나은 서비스와 인터페이스 설계로 연결합니다. <br> 생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, <br> HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.</p>
+    <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 1rem;">생성형 AI 인터페이스·자율주행·로봇 서비스 등 다양한 도메인에서 사용자 연구를 수행했으며, <br> HD현대·LG전자·Naver Cloud 등 기업 산학 및 인턴 경험을 통해 리서치와 실무를 연결합니다.</p>
     <p class="hero-desc" style="font-size: 0.94rem; line-height: 1.9; margin-bottom: 2rem;">빠르게 발전하는 기술이 만들어내는 새로운 상호작용을 이해하고, 사람이 더 잘 쓸 수 있도록 설계하고 싶습니다. <br> <span class="hl-green">데이터와 실험을 바탕으로 설계의 근거를 만들고</span>, 그 근거가 <span class="hl-navy">실제 제품과 비즈니스 성과로 이어지도록</span> 연결하는 리서처가 목표입니다.</p>
   </div>
 
@@ -451,10 +452,10 @@
       </summary>
       <div class="exp-details">
         <ul>
-          <li>제조·금융 등 B2B 산업 현장에서 AI가 데이터를 어떻게 이해하고 의사결정에 활용될 수 있는지, 온톨로지 기반 지식 구조화 방법론을 직접 리서치하고 서비스 기획에 적용</li>
-          <li>Palantir, Microsoft 등 AX(AI Transformation) 선도 기업의 온톨로지 구축 방식과 B2B 서비스 구조를 심층 분석하여 팀 내 벤치마킹 자료로 활용</li>
-          <li>Graph RAG·Hybrid RAG 등 지식그래프 기반 RAG 방법론을 테크팀·기획팀 합동 AI 논문 세미나에서 발제하며 기술–기획 간 언어 격차를 좁히는 역할 수행</li>
-          <li>신규 B2B AI 모델의 시장 포지셔닝을 위한 경쟁사 분석 및 MVP 기획에 참여하며, AI 서비스가 실제 산업 현장에 도입되는 구조를 실무적으로 이해</li>
+          <li>온톨로지 기반 지식 구조화 방법론을 학술 논문 리서치와 테크팀·기획팀 합동 세미나 발제를 통해 심층 탐구, 기술–기획 간 언어 격차를 좁히는 역할 수행</li>
+          <li>Palantir·Microsoft 등 AX 선도 기업의 온톨로지 구축 방식과 B2B 서비스 구조를 분석하고, 신규 B2B AI 모델 시장 포지셔닝을 위한 경쟁사 분석 및 벤치마킹 자료 작성</li>
+          <li>리서치한 온톨로지 방법론을 고객사 사용 시나리오에 직접 적용해 비정형 데이터 기반 온톨로지 설계 테스트 주도, 그래프 DB 기반 쿼리 구현 및 GraphRAG와의 성능 비교 평가에 참여</li>
+          <li>사내 임직원 업무 시스템 WORKS의 온톨로지 기반 AX 프로젝트에 참여하여 유즈 케이스에 따른 프롬프트 설계 및 평가 주도</li>
         </ul>
       </div>
     </details>
@@ -525,31 +526,35 @@
     <div class="proj-cards-grid" style="grid-template-columns:repeat(2,minmax(0,360px));">
       <div class="proj-card" onclick="openProjModal('ax4')">
         <div class="proj-card-img">
-          <img src="images/ontology_thumb.png" alt="온톨로지 자동 구축 파이프라인" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/ontology_thumb.png" alt="온톨로지 자동 구축 파이프라인">
+          <span class="proj-card-cat-badge">AX</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">개인 프로젝트 · Naver Cloud 인턴 기반 · 2026</div><div class="proj-card-title">도금욕 공정 온톨로지 자동 구축 및 품질 분석 파이프라인</div><div class="proj-card-desc">AI에 데이터를 넣어도 맥락을 이해하지 못한다는 문제의식에서 출발. 온톨로지로 의미 구조를 부여해 분석 리포트 품질 15~17% 향상</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">개인 프로젝트 · Naver Cloud 인턴 기반 · 2026</div><div class="proj-card-title">LLM에 제조 도메인 지식 심기 — 온톨로지 파이프라인</div><div class="proj-card-desc">AI에 데이터를 넣어도 맥락을 이해하지 못한다는 문제의식에서 출발. 온톨로지로 의미 구조를 부여해 분석 리포트 품질 15~17% 향상</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('uxui1')">
         <div class="proj-card-img">
-          <img src="images/adot_thumb.png" alt="에이닷" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/adot_thumb.png" alt="에이닷">
+          <span class="proj-card-cat-badge">서비스기획</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷 대화형 사진 촬영 보조 및 갤러리 큐레이터</div><div class="proj-card-desc">시각장애인이 사진을 '활용하지 않는다'는 기존 인식을 뒤집고, 음성 기반 AI로 촬영부터 갤러리 관리까지 전 여정을 재설계 (장려상)</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">SKT & 고용노동부 · 2025</div><div class="proj-card-title">에이닷으로 시각장애인 접근성 서비스 기획</div><div class="proj-card-desc">시각장애인이 사진을 '활용하지 않는다'는 기존 인식을 뒤집고, 음성 기반 AI로 촬영부터 갤러리 관리까지 전 여정을 재설계 (장려상)</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('ax1')">
         <div class="proj-card-img">
-          <img src="images/ai_search_thumb.png" alt="생성형 AI 검색 연구" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/ai_search_thumb.png" alt="생성형 AI 검색 연구">
+          <span class="proj-card-cat-badge">UXUI</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">생성형 AI 기반 대화형 검색 시스템 인터페이스 연구</div><div class="proj-card-desc">AI가 모든 답을 바로 줘버릴 때 사용자 탐색이 약해진다는 문제의식으로, 응답 공개 방식×주도성 4조건 실험 설계·직접 구현 (IJHCS 1저자)</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">석사 졸업논문 · 2025</div><div class="proj-card-title">정보 공개 방식 × 주도성 — AI 검색 UX 실험</div><div class="proj-card-desc">AI가 모든 답을 바로 줘버릴 때 사용자 탐색이 약해진다는 문제의식으로, 응답 공개 방식×주도성 4조건 실험 설계·직접 구현 (IJHCS 1저자)</div></div>
       </div>
       <div class="proj-card" onclick="openProjModal('uxui2')">
         <div class="proj-card-img">
-          <img src="images/hdx_thumb.png" alt="HD현대 원격제어" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/hdx_thumb.png" alt="HD현대 원격제어">
+          <span class="proj-card-cat-badge">UXUI</span>
           <div class="proj-card-hover"><span class="proj-card-hover-btn">자세히 보기</span></div>
         </div>
-        <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">굴착기/휠로더 원격제어 UI/UX 선행연구</div><div class="proj-card-desc">감각이 차단된 원격 상황에서의 인지 부담을 현장 4곳 직접 방문으로 규명, 작업 분석·Co-design·Eye Tracking 기반 와이어프레임 완성</div></div>
+        <div class="proj-card-body"><div class="proj-card-tag">HD현대 산학 · 2024</div><div class="proj-card-title">중장비 원격제어 UX 리서치 및 UI 컨셉안 제작 — 현장·워크샵을 통한 사용자 조사 다각화</div><div class="proj-card-desc">감각이 차단된 원격 상황에서의 인지 부담을 현장 4곳 직접 방문으로 규명, 작업 분석·Co-design·Eye Tracking 기반 와이어프레임 완성</div></div>
       </div>
     </div>
   </div>
